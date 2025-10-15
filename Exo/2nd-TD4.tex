@@ -1,0 +1,172 @@
+\input{preamble}
+\newcommand{\C}{\mathcal{C}}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Seconde}
+\fancyhead[C]{\textbf{TD n°4 : fonctions}}
+\fancyhead[R]{\today}
+
+
+\exe{}{
+On considère le programme de calcul suivant :
+\begin{enumerate}[(label=\roman*)]
+\item On prend un nombre entier (positif ou négatif).
+\item On divise ce nombre par 3.
+\item On ajoute 1 à ce nombre.
+\end{enumerate}
+Peut-on modéliser ce programme de calcul par une fonction ? Si oui, donner :
+\begin{enumerate}
+\item Son domaine de définition
+\item Sa forme algébrique.
+\item L'image du point $1$ par la fonction.
+\item Les éventuels antécédent du point $0$ par la fonction.
+\end{enumerate}
+}{exe:1}{
+
+}
+
+\exe{, difficulty=0}{
+	Un étudiant jette une balle dans les airs et mesure la hauteur de la balle tous les quarts de seconde.
+	Il note ses résultats dans le tableau ci-dessous.
+	\begin{center}
+		\def\arraystretch{1.5}
+		%\setlength\tabcolsep{20pt}
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}\hline
+			Hauteur (cm) & 85 & 145 & 190 & 145 & 85 & 40 & 0 \\ \hline
+			Temps (s) & 0 & 0,25 & 0,5 & 0,75 & 1 & 1,25 & 1,5 \\\hline
+		\end{tabular}
+	\end{center}
+	
+	\begin{enumerate}
+		\item La hauteur est-elle une fonction du temps ? Justifier.
+		\item Le temps est-il une fonction de la hauteur ? Justifier.
+	\end{enumerate}
+}{exe:2}{
+	\begin{enumerate}
+		\item On peut associer \textbf{une seule} hauteur à chaque temps. La hauteur peut donc être vue comme fonction du temps.
+		\item On ne peut pas associer un unique temps à chaque hauteur. Par exemple, il y a deux temps distincts pour lesquels la hauteur est de $85$cm (0s et 1s).
+		Le temps ne peut donc pas être vu comme fonction de la hauteur.
+	\end{enumerate}
+}
+
+\exe{}{
+On considère la fonction $f$ définie par :
+\[ \begin{array}{c c c c}
+f : & \R & \to & \R \\
+& x & \mapsto & 3x -2
+\end{array} \]
+\begin{enumerate}
+\item Tracer la courbe représentative de $f$ dans un repère orthonormé.
+\item Donner le domaine de définition de la fonction $f$. La courbe tracée en 1/ couvre-t-elle tout ce domaine ? 
+\item Donner l'image du point $1$ par la fonction $f$.
+\item Donner Les éventuels antécédent du point $0$ par la fonction $f$.
+\end{enumerate}
+}{exe:3}{
+
+}
+
+\exe{}{
+$x$ est une variable réelle.
+\begin{enumerate}
+\item Traduire l'appartenance de $x$ à chaque intervalle ci-dessous en termes d'inégalités :
+\begin{multicols}{2}
+\begin{enumerate}
+\item $I_1 = ]-3;7[$
+\item $I_2 = [4;12]$
+\item $I_3 = ]-\infty;0]$
+\item $I_4 = [-3;4[$
+\end{enumerate}
+\end{multicols}
+\item En utilisant le résultat de la question précédente, donner une condition pour que $x$ appartienne à l'intervalle $I_1$ \textbf{ET} à l'intervalle $I_4$.
+Exprimer ce résultat sous forme d'intervalle.
+\end{enumerate}
+\textit{Pour deux ensembles quelconques, $A$ et $B$, on note $A \cap B$ leur intersection. \newline
+On a $(x \in A$ ET $x \in B) \equi (x \in A \cap B)$}.
+}{exe:4}{
+
+}
+
+\exe{, difficulty=1}{
+
+On considère les fonctions $f$ et $g$ définies par :
+\[ \begin{array}{c c c c c c c c c}
+f : & \R & \to & \R & \qquad & g : & \R & \to & \R \\
+& x & \mapsto & 2x+3 & \qquad & & x & \mapsto & 1-x
+\end{array} \]
+
+\begin{enumerate}
+\item Tracer une partie des courbes $\C_f$ et $\C_g$ dans un repère orthonormé.
+\item Déterminer les images du point $x=0$ par les fonctions $f$ et $g$. Que remarquez-vous ?
+\item Déterminer les éventuels antécédents du point $y=0$ par les fonctions $f$ et $g$.
+\item Existe-t-il un point $x$ tel que $f(x)=g(x)$. Si oui, le déterminer. Si non, expliquer.
+\end{enumerate}
+
+}{exe:5}{
+
+}
+
+\exe{,difficulty=1}{
+	Un fonction $f$ admet le tableau de valeurs suivant.
+		\begin{center}
+		\def\arraystretch{1.2}
+		\setlength\tabcolsep{20pt}
+		\begin{tabular}{|c|c|c|c|c|}\hline
+			$x$ & 0 & -2 & 1 & -1 \\ \hline
+			$f(x)$ & 1 & 0 & 0 & 1 \\ \hline
+		\end{tabular}
+		\end{center}
+	Parmis les expressions algébriques suivantes, lesquelles \textbf{ne peuvent pas} correspondre à $f(x)$ ?
+		\begin{multicols}{4}
+		\begin{enumerate}[label=\roman*)]
+			\item $1-x$
+			\item $1+\dfrac{x}2$
+			\item $\dfrac{1-x}2$
+			\item $\dfrac{-x^2 - x + 2}2$
+		\end{enumerate}
+		\end{multicols}
+}{exe:6}{
+
+}
+
+\exe{, difficulty=1}{
+	Déterminer une fonction numérique $g$, définie sur $\R$ et telle que :
+	\[ g(0)=5 \qquad g(3)=0 \]
+	Peut-on trouver d'autres fonctions définies sur $\R$ et vérifiant ces deux conditions ? 
+}{exe:7}{
+
+}
+
+\exe{, difficulty=2}{
+On rappelle la formule de double distributivité, soient $a, b, c$ et $d$ quatre nombres réels quelconques. On a :
+\[ (a+b)(c+d) = ac + ad + bc + bd . \]
+En particulier, si $a=c$ et $b=d$, on obtient l'identité remarquable :
+\[ (a+b)^2 = a^2 + 2ab + b^2. \]
+Ces formules sont à connaître \textbf{par coeur}. \newline
+\begin{enumerate}
+\item Donner une expression développée de $(a-b)^2$. \newline
+\textit{Indication : remplacer $b$ par $-b$}.
+\item On considère la fonction :
+\[ \begin{array}{c c c c}
+f : & \R & \mapsto & \R \\
+& x & \to & x^2 - 4x +10
+\end{array} \]
+Démontrer que $f(x)=6+(x-2)^2$.
+\item En conclure que, pour tout $x \in \R, f(x) \geq 6$.
+\item Donner un nombre $x_0 \in \R$ tel que $f(x_0)=6$.
+\end{enumerate}
+}{exe:8}{
+
+}
+
+%\exe{, difficulty=2}{
+%
+%}{exe:9}{
+%
+%}
+
+
+
+
+\end{document}

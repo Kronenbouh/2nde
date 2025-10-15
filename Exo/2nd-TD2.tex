@@ -1,0 +1,182 @@
+\input{preamble}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Seconde}
+\fancyhead[C]{\textbf{TD n°2 : ensembles de nombres}}
+\fancyhead[R]{\today}
+
+\exe{}{
+\begin{enumerate}
+	\item Donner l'ensemble $A$ des entiers supérieurs ou égaux à 0 et inférieurs ou égaux à 7.
+	
+	\item Donner l'ensemble $B$ des éléments de $A$ qui sont pairs.
+	
+	\item A-t-on $A \subseteq B$ ? $B \subseteq A$ ?
+\end{enumerate}
+}{exe:exo1}{
+	\begin{multicols}{2}
+		$A = \{ 0 ; 1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 7 \}$
+		
+		$B = \bigset{ 0 ; 2 ; 4 ; 6 }$
+	\end{multicols}
+	On a $B \subseteq A$ car tous les éléments de $B$ sont des éléments de $A$, et $A \not\subseteq B$ car l'inverse est faux (7 appartient à $A$ mais pas à $B$, par exemple).
+}
+
+\exe{}{
+\begin{enumerate}
+	\item Décrire l'ensemble $A$ de l'exercice \ref{exe:exo1} sous les formes $\bigset{ n \in \N \tq \dots }$ et $\bigset{ n \in \Z \tq \dots }$.	
+	\item Décrire l'ensemble $B$ de l'exercice \ref{exe:exo1} sous la forme $\bigset{ n \in A \tq \dots }$.
+\end{enumerate}
+}{exe:exo2}{
+	\begin{multicols}{2}
+		$A = \bigset{ n \in \N \tq n \leq 7}$
+		
+		$A = \bigset{ n \in \Z \tq 0 \leq n \leq 7}$
+		
+		$B = \bigset{ n \in A \tq \text{$n$ est pair}}$
+	\end{multicols}
+}
+
+\exe{}{
+En utilisant la définition d'un nombre rationnel, démontrer les affirmations suivantes :
+\begin{multicols}{2}
+\begin{enumerate}[label=(\alph*)]
+\item 	$\dfrac{1}{3}  = \dfrac{2}{6} $.
+\item Pour tout $a \in \Z, \dfrac{a}{a} = 1$.
+\item $\dfrac{1}{2}  + \dfrac{1}{3}  = \dfrac{5}{6}$.
+\item $\dfrac{1}{2} \times \dfrac{2}{3} = \dfrac{2}{6}$.
+\end{enumerate}
+\end{multicols}
+}{exe:exo3}{
+On rappelle que $\dfrac{a}{b}$ est l'unique nombre vérifiant $\dfrac{a}{b} \cdot b = a$. 
+Ainsi, $\dfrac{1}{3}$ est l'unique nombre vérifiant $\dfrac{1}{3} \cdot 3 = 1$, soit $\dfrac{1}{3} \cdot 6 = 2$. 
+Or, $\dfrac{2}{6}$ est l'unique nombre vérifiant $\dfrac{2}{6} \cdot 6 = 2$.
+Par unicité, on conclut que $\dfrac{1}{3} = \dfrac{2}{6}$. \\
+
+On emploie ensuite la même méthode pour les autres affirmations.
+}
+
+\exe{, difficulty=1}{
+	Montrer que $\frac19$ n'est pas décimal. \\
+	\textit{Indication : adapater la démonstration vue en cours.}
+}{exe:exo4}{
+	Si $\dfrac19 = \frac{a}{10^n}$, alors $10^n = 9a$ et est multiple de $9$.
+	Or l'entier d'avant est multiple de $9$ car
+		\[ 10^n - 1 = \underbrace{99{\dots}99}_{\text{n fois}} = 9 \times \underbrace{11{\dots}11}_{\text{n fois}} . \]
+	$10^n$ ne peut donc pas être multiple de $9$, une contradiction !
+}
+
+\exe{, difficulty=0}{
+Déterminer le plus petit ensemble de nombres auquel chaque nombre ci-dessous appartient (par exemple, $1 \in \N$).
+\begin{multicols}{3}
+\begin{enumerate}[label=(\alph*)]
+\item $\dfrac{121}{11}$
+\item $\dfrac{10^3-10^4}{10^2}$
+\item $0,123456789~123456789~\dots$
+\item $\dfrac17 + \dfrac5{14}$
+\item $\dfrac12 - \dfrac7{18}$
+\item $x$ tel que $x^2=3$
+\end{enumerate}
+\end{multicols}
+}{exe:exo5}{
+\begin{multicols}{2}
+\begin{enumerate}[label=(\alph*)]
+\item $\dfrac{121}{11}=11 \in \N$
+\item $\dfrac{10^3-10^4}{10^2} = -\dfrac{9000}{100} = -90 \in \Z$
+\item $0,123456789~123456789~\dots \in \Q$
+\item $\dfrac17 + \dfrac5{14} = \dfrac12 \in \D$ 
+\item $\dfrac12 - \dfrac7{18} = \dfrac19 \in \Q$
+\item $x = \pm \sqrt{3} \in \R$
+\end{enumerate}
+\end{multicols}
+}
+
+\exe{}{
+Soient $a$ et $b$ deux entiers relatifs. Est-il possible que $a+b \not \in \Z$ ? Même question pour $a \times b$.
+}{exe:exo6}{
+Les entiers sont caractérisés par une partie fractionnaire (les chiffres après la virgule) composée uniquement de zéros...
+}
+
+\exe{,difficulty=2}{
+Soient $a, b, c ,d \in  \Z$ avec $b$ et $d$ non nuls, démontrer que
+\begin{align*} \dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}
+		&& \text{ et } &&
+		\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad + bc}{bd}. \end{align*}
+En déduire que l'ensemble $\Q$ est stable pour les opérations $+$ et $\times$, c'est-à-dire que la somme de deux nombres rationnels est un nombre rationnel et que le produit de deux nombres rationnels est un nombre rationnel.
+}{exo:exo7}{
+On pose $r = \dfrac{a}{b}$ et $s = \dfrac{c}{d}$, on a :
+\[ \left \{  \begin{array}{c c} br & = a \\ ds & = c \end{array} \right. \]
+En multipliant la première équation par $d$ et la deuxième par $b$, on pourra factoriser et obtenir une équation pour $r+s$
+\[ \left \{ \begin{array}{c c} (db)r & = da \\ (bd)s & = bc \end{array} \right. \]
+En sommant et en factorisant, on trouve 
+\[ bd(r+s)=ad + bc \Rightarrow r+s = \dfrac{a}{b} + \dfrac{c}{d} = \dfrac{ad + bc}{bd} \]
+Or $ad + bc \in \Z$ et $bd \in \Z$ non nul, donc $\dfrac{ad + bc}{bd} \in \Q$. \\
+
+Similairement, en multipliant les équations, on obtient $(br)(ds)=ac \iff (bd)(rs) = ac$, et donc $r \cdot s = \dfrac{ac}{bd} \in \Q$.
+}
+
+\exe{,difficulty=2}{
+Donner un nombre irrationnel.
+}{exo:exo8}{
+Le nombre $x=0,1234567891011121314 \dots$ 
+(on écrit à la suite tous les entiers dans la partie fractionnaire de $x$) est un nombre irationnel. \\
+
+En effet, supposons que la partie fractionnaire de $x$ présente une période de longueur $p$. 
+A un point donné de la partie fractionnaire de $x$, on trouvera l'entier 
+\[10^{2p} = 1\underbrace{0\dots0}_{\text{2p fois}} .\] 
+Il y aura forcément au moins une période du développement décimal de $x$ parmi cette suite de $2p$ zéros, 
+donc le développement décimal de $x$ est éventuellement composé uniquement de zéros. 
+Donc $x$ est décimal, ce qui est absurde.
+}
+
+\exe{}{
+	Vrai ou faux ? L'encadrement \\
+	
+	\begin{tabular}{c c}
+		$2,6 < 2,6457 < 2,8$ & est à $10^{-1}$ près \\
+		$3,14 < 3,1415 < 3,15$ & est à $10^{-2}$ près \\
+		$-4,474 < -4,4735 < -4,473$ & est à $10^{-3}$ \\
+		$3,3 \times 10^{-4} < 3,3931 \times 10^{-4} < 3,4 \times 10^{-4}$ & est à $10^{-5}$ près
+	\end{tabular}
+}{exe:exo9}{
+	L'amplitude d'un encadrement $a < x < b$ est donnée par $b-a$.
+	La première proposition est fausse car l'amplitude est de $0,2 = 2 \times 10^{-1}$.
+	Pour la quatrième proposition, on utilise que $0,1 \times 10^{-4} = 10^{-1} \times 10^{-4} = 10^{-5}$.
+
+	\begin{tabular}{c c c}
+		\hspace{10cm} & Vrai & Faux \\
+		$2,6 < 2,6457 < 2,8$ est à $10^{-1}$ près & $\times$ & \checkmark  \\
+		$3,14 < 3,1415 < 3,15$ est à $10^{-2}$ près & \checkmark & $\times$  \\
+		$-4,474 < -4,4735 < -4,473$ est à $10^{-3}$ près & \checkmark & $\times$  \\
+		$3,3 \times 10^{-4} < 3,3931 \times 10^{-4} < 3,4 \times 10^{-4}$ est à $10^{-5}$ près & \checkmark & $\times$  \\
+	\end{tabular}
+}
+
+\exe{}{
+	Encadrer les nombres suivants à l'amplitude demandée.
+	\begin{multicols}{2}
+	\begin{enumerate}[label=\alph*)]
+		\item $3,605 \times 10^{-2}$ à $10^{-4}$ près.
+		\item $9~854,698 \times 10^3$ à $10^4$ près.
+		\item $-31,45$ à $10^{-1}$ près.
+		\item $-0,0125$ à $10^{-4}$ près.
+	\end{enumerate}
+	\end{multicols}
+}{exe:exo10}{
+	\begin{enumerate}[label=\alph*)]
+		\item $3,600 \times 10^{-2} < 3,605 \times 10^{-2} < 3,61 \times 10^{-2}$
+		\item $9~850 \times 10^3 < 9~854,698 \times 10^3 < 9~860 \times 10^3$
+		\item $-31,5 < -31,45 < -31,4$
+		\item $-0,01255 < -0,0125 < -0,01245$
+	\end{enumerate}
+}
+
+%%%%%%%%%%%%
+
+\newpage
+\fancyhead[C]{\textbf{Solutions}}
+\shipoutAnswer
+
+\end{document}

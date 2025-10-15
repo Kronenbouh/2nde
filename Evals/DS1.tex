@@ -1,0 +1,194 @@
+\input{preamble.tex}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead[L]{Seconde}
+\fancyhead[C]{\textbf{DS n°1 — Ensembles de nombres}}
+\fancyhead[R]{\today}
+
+\reversemarginpar
+
+\null\vspace{-30pt}
+Nom / Prénom : \\
+
+Consignes particulières : 
+\begin{itemize}[label=$\bullet$]
+	\item 
+	La calculatrice est {interdite}.
+	\item 
+	L'exercice \ref{exe:1} peut être fait entièrement sur la feuille d'évaluation. Écrire son nom avant de rendre le sujet pour qu'il soit corrigé.
+	\item 
+	Toute trace de recherche est prise en compte.
+	\item 
+	L'abbréviation $\tq$ signifie ``tel que''.
+\end{itemize}
+
+\hrule
+
+\exe{3}{
+	Vrai ou faux ? Cocher la case correspondante (aucune justification n'est attendue). \\
+	\vspace{-20pt}
+	\begin{center}
+	\begin{tabular}{c c c}
+		\hspace{10cm} & Vrai & Faux \\
+		$\Z \subset \Q$  & $\square$ & $\square$  \\
+		$\dfrac5{14} + \dfrac17$ est un nombre décimal & $\square$ & $\square$  \\
+		$\dfrac19 = 0,11111$ & $\square$ & $\square$  \\ \vspace{-5pt} \\
+		L'encadrement $0,75 < 0,758 < 0,76$ est à $10^{-2}$ près & $\square$ & $\square$  \\
+		$\sqrt{144}$ est un nombre rationnel & $\square$ & $\square$  \\
+		$ \{-4, 0, 1, 7 \} \subset \{ n \in \N \tq -4 < n \leq 8 \}$ & $\square$ & $\square$  \\
+	\end{tabular}
+	\end{center}
+	}{exe:1}{
+	
+	Les réponses sont, dans l'ordre : vrai, vrai, faux, vrai, vrai, faux.
+	}
+	
+\exe{3}{
+	\begin{enumerate}
+		\item Sans justification, donner un exemple de nombre rationnel \textbf{qui n'est pas décimal}.
+		\item Sans justification, donner un exemple de nombre réel \textbf{qui n'est pas rationnel}.
+		\item Sans justification, donner un exemple de nombre décimal tel que, 
+		multiplié par une certaine puissance de 10, ce nombre est pair.
+	\end{enumerate}
+}{exe:2}{
+Les nombres suivants convienent :
+	\begin{enumerate}
+		\item $\dfrac13$ ;
+		\item $\sqrt{2}$ ;
+		\item 2.
+	\end{enumerate}
+}
+
+\exe{3}{
+Mettre les nombres ci-dessous sous forme de fractions :
+\begin{multicols}{3}
+\begin{enumerate}[label=(\alph*)]
+\item 0,0025
+\item 0,111000111
+\item 0,120051200512005... (se répète à l'infini)
+\end{enumerate}
+\end{multicols}
+}{exe:3}{
+Attention, les deux premiers nombres sont simplement décimaux.
+\begin{enumerate}[label=(\alph*)]
+\item $0,0025 = \dfrac{25}{1000}=\dfrac{1}{40}$
+\item $0,111000111 = \dfrac{111000111}{10^9}$
+\item On note $x=0,120051200512005...$, on a $x \times 10^5 - x = 12005$ donc $x=\dfrac{12005}{99999}$.
+\end{enumerate}
+}
+
+\exe{2}{
+\begin{enumerate}
+\item Donner un élément appartenant à chacun des ensembles ci-dessous :
+\begin{multicols}{2}
+\begin{enumerate}[label=(\alph*)]
+\item $A = \{ n \in \Z \tq -7 \leq n < 8 \}$.
+\item $B = \{ n \in \N \tq n \leq 7  \}$. 
+\end{enumerate}
+\end{multicols}
+\item A-t-on $A \subset B$ ? $B \subset A$ ? \textbf{Justifier}.
+\end{enumerate}
+}{exe:4}{
+\begin{enumerate}
+\item Donner un élément appartenant à chacun des ensembles ci-dessous :
+\begin{multicols}{2}
+\begin{enumerate}[label=(\alph*)]
+\item $2 \in A$.
+\item $0 \in B$. 
+\end{enumerate}
+\end{multicols}
+\item On a $B= \{0,1,2,3,4,5,6,7 \}$ donc clairement $B \subset A$. En revanche $-7 \not \in B$ et $-7 \in A$ donc $A \not \subset B$. 
+\end{enumerate}
+}
+
+\exe{3}{
+Donner le développement décimal de $\frac1{11}$. Ce développement décimal est-il périodique ? Si oui, de quelle longueur est la période ? Justifier.
+}{exe:5}{
+$\frac1{11}=0,09090909...$, ce développement décimal est périodique, la période (09) est de longueur 2.
+}
+
+\exe{4}{
+	Encadrer les nombres suivants (par des nombres décimaux) à l'amplitude demandée.
+	\begin{multicols}{2}
+	\begin{enumerate}[label=\alph*)]
+		\item 4,75 à $10^{-1}$ près
+		\item $1024,75 \times 10^{-2}$ à $10^{-2}$ près.
+		\item $1,0001~0001 \dots$ à $10^{-5}$ près.
+		\item -2,95678 à $10^{-3}$ près.
+	\end{enumerate}
+	\end{multicols}
+}{exe:exo6}{
+	\begin{enumerate}[label=\alph*)]
+		\item $4,7 < 4,75 < 4,8$.
+		\item $10,24 < 10,2475 < 10,25$.
+		\item $1,0001 < 1,0001~0001 \dots < 1,0001~1$.
+		\item $-2,957 < -2,95678 < -2,956$.
+	\end{enumerate}
+}
+
+\exe{3}{
+Démontrer que $\dfrac{1}{30} = \dfrac{1}{10} \cdot \dfrac13$. En déduire que $\dfrac{1}{30}$ n'est pas un nombre décimal. \\
+\textit{Indication : on pourra utiliser le résultat du cours sur le nombre $\dfrac13$.}
+}{exe:exo7}{
+Supposons que $\dfrac{1}{30}$ soit décimal, on écrit alors $\dfrac{1}{30} = \dfrac{a}{10^n}$ avec $a \in \Z$ et $n \in \N$. 
+Par suite, $\dfrac13 = \dfrac{a}{10^{n-1}}$, donc $\dfrac13$ est décimal, ce qui est faux (voir démonstration du cours).
+}
+
+\exe{3}{
+\begin{enumerate}
+\item
+Rappeler la définition du nombre $\dfrac{a}{b}$ pour $a, b \in \Z$ et $b$ non nul.
+\item
+En utilisant \textbf{leurs définitions} démontrer que les nombres $\dfrac34$ et $\dfrac68$ sont égaux.
+\end{enumerate}
+}{exe:exo8}{
+\begin{enumerate}
+\item
+$\dfrac{a}{b}$ est \textbf{l'unique} nombre tel que $\dfrac{a}{b} \times b =a$.
+\item
+$\dfrac{3}{4}$ est \textbf{l'unique} nombre tel que $\dfrac{3}{4} \times 4 =3$.
+$\dfrac{6}{8}$ est \textbf{l'unique} nombre tel que $\dfrac{6}{8} \times 8 =6$.
+On en déduit que $\dfrac{3}{4} \times 4 \times 2 = \dfrac34 \times 8 = 6$, par unicité, on conclut que $\dfrac34 = \dfrac68$.
+\end{enumerate}
+}
+
+\exe{3}{
+Déterminer le plus petit ensemble de nombres auquel chaque nombre ci-dessous appartient (par exemple, $1 \in \N$).
+\begin{multicols}{3}
+\begin{enumerate}[label=(\alph*)]
+\item $\dfrac{81}{9}$
+\item $\sqrt{2}$
+\item $0,123~123~\dots$
+\item $\dfrac16 + \dfrac13$
+\item $10^2-700$
+\item $\dfrac19 \times (-9) + 5$  
+\end{enumerate}
+\end{multicols}
+}{exe:exo9}{
+\begin{multicols}{3}
+\begin{enumerate}[label=(\alph*)]
+\item $\dfrac{81}{9}=9 \in \N$
+\item $\sqrt{2} \in \R$
+\item $0,123~123~\dots \in \Q$
+\item $\dfrac16 + \dfrac13 = \dfrac12 \in \D$
+\item $10^2-700 = -600 \in \Z$
+\item $\dfrac19 \times (-9) + 5 = 4 \in \N$  
+\end{enumerate}
+\end{multicols}
+}
+
+\exe{}{
+(Exercice bonus) \\
+Construire deux ensembles $A$ et $B$ contenant chacun une infinité de nombres réels et tels que $A \not \subset B$ et $B \not \subset A$.
+}{exe:exo10}{
+$A = \{ 2n \tq n \in \N \}$ et $B=\{2n+1 \tq n \in \N\}$. $A$ est l'ensemble des entiers pairs et $B$ l'ensemble des entiers impairs. On a bien $A \not \subset B$ et $B \not \subset A$.
+}
+
+%%%%%%%%%%%%
+
+\newpage
+\fancyhead[C]{\textbf{Solutions}}
+\shipoutAnswer
+
+\end{document}

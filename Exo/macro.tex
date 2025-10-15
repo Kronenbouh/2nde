@@ -1,0 +1,52 @@
+%Ensembles de nombres
+\newcommand{\N} {\mathbb{N}}
+\newcommand{\Ne}{\N^\ast}
+\newcommand{\Z} {\mathbb{Z}}
+\newcommand{\D} {\mathbb{D}}
+\newcommand{\Q} {\mathbb{Q}}
+\newcommand{\R} {\mathbb{R}}
+\newcommand{\Rb}{\overline{\mathbb{R}}}
+\newcommand{\Rp}{\R_+}
+\newcommand{\Rm}{\R_-}
+\newcommand{\K} {\mathbb{K}}
+\newcommand{\Cx}{\mathbb{C}}
+
+%Opérateurs
+\newcommand{\equi}{\Leftrightarrow}
+
+%Normes
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+%Flemme
+\newcommand{\tq}{\text{ t.q. }}
+\newcommand{\bigset}[1]{\bigl\{ #1 \bigr\}}
+\newcommand{\Bigset}[1]{\Bigl\{ #1 \Bigr\}}
+
+%Commande d'exo
+\newcommand{\exe}[4]{
+	\begin{Exercise}[title=#1, label=#3]
+		#2
+	\end{Exercise}
+	\begin{Answer}[ref=#3]
+		#4
+	\end{Answer}
+}
+
+\newcommand{\exemulticols}[5]{
+	\begin{multicols}{2}
+	\begin{Exercise}[title=#1, label=#4]
+		\if\relax\detokenize\expandafter{\ExerciseTitle}\relax
+		%\marginnote{[Bonus]}
+		\else
+		\marginnote{\mbox{[\ExerciseTitle]\qquad}}
+		\addtocounter{points}{\ExerciseTitle}
+		\fi
+		#2
+	\end{Exercise}
+	\columnbreak
+		#3
+	\end{multicols}
+	\begin{Answer}[ref=#4]
+		#5
+	\end{Answer}
+}
