@@ -718,4 +718,223 @@ Le point $(2,2)$ n'appartient pas à la courbe représentative de la fonction $f
 On a bien $2 \in \Dom_f$, cependant $f(2)=5 \neq 2$.
 \end{ex}
 
+\chapter{Evolution chiffrée}
+
+\section{Population et sous-population}
+
+\begin{defn}
+On appelle population un ensemble d'individus et sous-population un sous-ensemble de ces individus.
+\end{defn}
+
+\begin{ex}
+La sous-population des habitants d'Yzeure est un sous-ensemble de la population française.
+Si on note $F$ la population française et $Y$ la population de la commune d'Yzeure, on a :
+\[ Y \subset F \]
+\end{ex}
+
+\begin{defn}[Cardinal]
+On appelle cardinal d'un ensemble fini le nombre d'éléments constituant cet ensemble. 
+Pour un ensemble $E$ fini, on note $\abs{E}$ son cardinal.
+\end{defn}
+
+\begin{ex}
+Le cardinal de la sous-population des habitants d'Yzeure est égal à 12 670 (au recensement de 2012).
+\end{ex}
+
+\begin{rmq}
+Le cardinal d'un ensemble est un nombre \textbf{positif}.
+\end{rmq}
+
+\begin{prop}
+On considère deux ensembles finis $E$ et $F$ tels que $F \subset E$. On a alors :
+\[ \abs{F} \leq \abs{E} . \]
+\end{prop}
+
+\begin{defn}[Propotion d'une sous-population]
+On considère une population $E$ et une sous-population $F$ ($F \subset E$).
+La proportion d'individus de $E$ appartenant à $F$ est donnée par
+\[ p = \dfrac{\abs{F}}{\abs{E}}. \]
+Lorsque cette proportion est exprimée sous la forme d'une fraction de $100$, on parle alors de \textbf{pourcentage} d'éléments de $E$ appartenant à $F$.
+\end{defn}
+
+\begin{ex}
+La proportion de Français résidant à Yzeure est égale à 
+\[ p \approx \dfrac{12~670}{68 \times 10^6} \approx 1,86 \times 10^{-4} . \] 
+Environ $0,0186 \%$ de la population française réside à Yzeure. 
+\end{ex}
+
+\begin{prop}
+Pour $F \subseteq E$, on a :
+\[ p \in [0;1] . \]
+Autrement dit, la proportion d'individus d'une population appartenant à une sous-population donnée est un nombre compris entre 0 et 1,
+ou encore le pourcentage d'individus appartenant à une sous-population est compris entre $0 \%$ et $100 \%$.
+\end{prop}
+
+\begin{proof}
+Comme $F \subseteq E$, on a $0 \leq \abs{F} \leq \abs{E}$, d'où le résultat.
+\end{rmq}
+
+\begin{rmq}
+Pour convertir une proportion $p$ en un pourcentage, il suffit de la multiplier par 100. 
+Par exemple, si $p=\frac13$, alors $p \approx 33 \%$. 
+On prendra garde au fait que de ne conserver qu'une partie des décimales du développement décimal d'une proportion 
+revient à approximer cette dernière.
+\end{rmq}
+
+\begin{prop}[Sous-populations imbriquées]
+On considère une popuation $E$ et deux sous-populations $F$ et $G$ telles que :
+\[ G \subseteq F \subseteq E . \]
+On note par ailleurs $p_F = \dfrac{\abs{F}}{\abs{E}}$ et $p_{G/F} = \dfrac{\abs{G}}{\abs{F}}$. On a alors 
+\[p_{G} = p_F \times p_{G/F} . \]
+Autrement dit, la proportion d'individus de $G$ dans la population totale est égale à la proportion d'individus de $F$ dans la population totale multipliée par la proportion d'individus de $G$ dans la sous-population $F$. 
+\end{prop}
+
+\begin{ex}
+Dans un lycée, tous les élèves de seconde avec l'option Chinois sont regroupés dans une même classe.
+Cette classe compte pour $3 \%$ de l'effectif total du lycée. 
+Par ailleurs $20 \%$ des élèves de cette classe ont l'option Chinois.
+Ainsi, le pourcentage de secondes ayant l'option Chinois dans le lycée est égal à :
+\[ \frac3{100} \times \frac{20}{100} = 0,6 \% . \]
+\end{ex}
+
+\section{Evolution}
+
+\begin{defn}[Augmentation, diminution]
+Soit $x$ une quantité quelconque et $p \geq 0$ une proportion.
+Une \textbf{augmentation} de $x$ d'une proportion $p \geq 0$ correspond à la somme
+\[ x + x\cdot p = x \cdot (1+p).\]
+Une \textbf{diminution} de $x$ d'une proportion $0\leq p \leq 1$ correspond à la différence
+\[ x - x\cdot p = x \cdot (1-p).\]
+\end{defn}
+
+\begin{rmq}
+On peut généraliser ces formules à une proportion $p$ négative. On a alors une seule formule :
+\[ x + x\cdot p = x \cdot (1+p) , \]
+et si $p<0$ alors l'évolution correspond à une diminution de $x$ d'une proportion $p$.
+\end{rmq}
+
+\begin{prop}[Evolution en pourcentage]
+Soit $x$ une quantité quelconque et $p \%$ un pourcentage. Une augmentation de $p \%$ de $x$ correspond à l'opération :
+\[ x \cdot \left (1 + \dfrac{p \%}{100} \right ) . \]
+Inversement, une diminution de $p \%$ de $x$ correspond à l'opération :
+\[ x \cdot \left (1 - \dfrac{p \%}{100} \right) . \]
+\end{prop}
+
+\begin{ex}
+Un commerçant diminue le prix d'un article de $15 \%$. En notant $x$ le prix de l'article \textbf{avant diminution}, 
+le prix après diminution correspond à $x \cdot \left ( 1 - \frac{15}{100} \right ) = x \cdot 0,85$.
+\end{ex}
+
+\begin{prop}[Astuce de calcul]
+Soient $A$ et $B$ deux nombres réels positifs ou nuls.
+Les quantités \og $A\%$ de $B$ \fg ~et \og $B\%$ de $A$ \fg ~sont égales.
+\end{prop}
+
+\begin{rmq}
+Cette proposition permet de calculer facilement certaines proportion. 
+Par exemple, il est plus facile de calculer $20 \%$ de 45 que $45 \%$ de 20.
+\end{rmq}
+
+\begin{defn}[Variation absolue et relative]
+On considère une quantité quelconque prenant les valeurs $x_1$ (valeur initiale) \textbf{puis} $x_2$ (valeur finale).
+\begin{itemize}
+\item
+La variation absolue de cette quantité correspond à la différence $x_2 - x_1$.
+\item 
+La variation relative de cette quantité correspond au rapport  :
+\[ \dfrac{x_2 - x_1}{x_1} \]
+\end{itemize}
+\end{defn}
+
+\begin{ex}
+Le prix au kilogramme de la farine de blé passe de 0,74 \euro~ à 0,82 \euro.
+\begin{itemize}
+\item
+La variation absolue de ce prix est égale à 0,08 \euro soit 8 centimes.
+\item 
+La variation relative de cette quantité est égale à :
+\[ \dfrac{0,82 - 0,74}{0,74} \approx 0,108 \] 
+ce qui correspond à un augmentation d'environ $10,8 \%$.
+\end{itemize}
+\end{ex}
+
+\begin{defn}[Coefficient multiplicateur]
+On considère une quantité quelconque prenant les valeurs $x_1$ (valeur initiale) \textbf{puis} $x_2$ (valeur finale).
+Le coefficient multiplicateur entre ces deux valeurs correspond au rapport :
+\[ m = \dfrac{x_2}{x_1} . \]
+\end{defn}
+
+\begin{prop}
+Soient $x_1$ et $x_2$ les valeurs successives d'une quantité et $m = \frac{x_2}{x_1}$ le coefficient multiplicateur correspondant.
+On distingue trois cas.
+\begin{enumerate}
+    \item si $x_1=x_2$, alors $m=1$ ;
+    \item si $x_1 < x_2$, alors $m>1$ ; 
+    \item si $x_1 > x_2$, alors $m<1$.
+\end{enumerate}
+\end{prop}
+
+\begin{rmq}
+On peut convertir ce coefficient multiplicateur $m$ en une proportion en utilisant la formule :
+\[ p = 1 - m \equi m = 1 + p . \]
+En effet :
+\begin{itemize}
+\item si $m=1$, la quantité n'a pas évoluée et $p = 0$ ;
+\item si $m>1$, la quantité a agumentée et $p>0$, ce qui correspond à une augmentation d'une proportion $p$ ;
+\item si $m<1$, la quantité a diminuée et $p<0$, ce qui correspond à une diminution d'une proportion $-p$.
+\end{itemize}
+\end{rmq}
+
+\begin{thm}[Evolutions successives]
+On considère une grandeur quelconque subissant deux évolutions successives 
+et on note $m_1$ et $m_2$ les facteurs multiplicatifs de ces deux évolutions.
+Alors, le facteur mulitplicatif total est donné par 
+\[ m=m_1 \times m_2 . \]
+En d'autres termes, lors d'évolutions successives, les facteurs multiplicatifs sont multipliés entre eux. 
+
+\begin{center}
+	\resizebox{11cm}{!}{
+	\begin{tikzpicture}
+		% nodes
+		\draw[thick] (0,0) ellipse (2.4cm and .6cm) node {Valeur initiale};
+		
+		\draw[thick] (5,0) ellipse (2.4cm and .6cm) node {Nouvelle valeur};
+		
+		\draw[thick] (10,0) ellipse (2.4cm and .6cm) node {Valeur finale};
+		
+		% vertices
+		\draw[->, very thick, green] (1cm,.6cm) arc (105:75:7) node[midway, above] {$\times m_1$};
+		\draw[->, very thick, green] (6cm,.6cm) arc (105:75:7) node[midway, above] {$\times m_2$};
+		
+		\draw[->, very thick, red] (1cm,-.5cm) arc (-105:-75:15) node[midway, below] {$\times (m_1\cdot m_2)$};
+	\end{tikzpicture}
+	}
+\end{center}
+\end{thm}
+
+\begin{thm}[Evolutions réciproques]
+On considère une grandeur quelconque subissant une évolution de coefficient multiplicateur $m$.
+Alors le coefficient multiplicateur qui permet de revenir à la valeur initiale de cette grandeur correspond à :
+\[ m' = \dfrac1{m} \]
+
+	\begin{center}
+	\resizebox{11cm}{!}{
+	\begin{tikzpicture}
+		% nodes
+		\draw[thick] (0,0) ellipse (2.4cm and .6cm) node {Valeur initiale};
+		
+		\draw[thick] (5,0) ellipse (2.4cm and .6cm) node {Nouvelle valeur};
+		
+		\draw[thick] (10,0) ellipse (2.4cm and .6cm) node {Valeur initiale};
+		
+		% vertices
+		\draw[->, very thick, green] (1cm,.6cm) arc (105:75:7) node[midway, above] {$\times m$};
+		\draw[->, very thick, green] (6cm,.6cm) arc (105:75:7) node[midway, above] {$\times \dfrac{1}{m}$};
+		
+		\draw[->, very thick, red] (1cm,-.5cm) arc (-105:-75:15) node[midway, below] {$\times \left(m\cdot \dfrac{1}{m}\right) = \times 1$};
+	\end{tikzpicture}
+	}
+	\end{center}
+\end{thm}
+
 \end{document}

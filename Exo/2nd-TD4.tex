@@ -11,7 +11,7 @@
 
 \exe{}{
 On considère le programme de calcul suivant :
-\begin{enumerate}[(label=\roman*)]
+\begin{enumerate}[label=(\roman*)]
 \item On prend un nombre entier (positif ou négatif).
 \item On divise ce nombre par 3.
 \item On ajoute 1 à ce nombre.
@@ -24,7 +24,13 @@ Peut-on modéliser ce programme de calcul par une fonction ? Si oui, donner :
 \item Les éventuels antécédent du point $0$ par la fonction.
 \end{enumerate}
 }{exe:1}{
-
+Appelons $f$ cette fonction.
+\begin{enumerate}
+\item Le domaine de définition est $\Z$
+\item La forme algébrique est $f(x)=\frac{x}3+1$
+\item $f(1)=\frac13+1 = \frac43$.
+\item On résout $\frac{x}3+1=0$ on trouve $x=-3$.
+\end{enumerate}
 }
 
 \exe{, difficulty=0}{
@@ -61,10 +67,22 @@ f : & \R & \to & \R \\
 \item Tracer la courbe représentative de $f$ dans un repère orthonormé.
 \item Donner le domaine de définition de la fonction $f$. La courbe tracée en 1/ couvre-t-elle tout ce domaine ? 
 \item Donner l'image du point $1$ par la fonction $f$.
-\item Donner Les éventuels antécédent du point $0$ par la fonction $f$.
+\item Donner les éventuels antécédent du point $0$ par la fonction $f$.
 \end{enumerate}
 }{exe:3}{
-
+\begin{enumerate}
+\item 
+\begin{tikzpicture}[>=stealth, scale=1]
+	\begin{axis}[xmin = -4, xmax=4, ymin=-6, ymax=10, axis x line=middle, axis y line=middle, axis line style=<->, xlabel={}, ylabel={}, 		grid=both, grid style = {opacity=.5}]]
+		\addplot[blue, very thick, domain =-3:3, samples=2] {3*x-2}  node[below=3pt] {$\C_f$};
+		\addplot[blue, very thick, dashed, domain =-4:-3, samples=2] {3*x-2} ;
+		\addplot[blue, very thick, dashed, domain =3:4, samples=2] {3*x-2};
+	\end{axis}
+\end{tikzpicture}
+\item $\D_f = \R$, la courbe ne couvre pas tout le domaine car il est infini.
+\item $f(1)=1$
+\item On résout $3x-2=0$, on trouve $x=\frac23$.
+\end{enumerate}
 }
 
 \exe{}{
@@ -85,7 +103,16 @@ Exprimer ce résultat sous forme d'intervalle.
 \textit{Pour deux ensembles quelconques, $A$ et $B$, on note $A \cap B$ leur intersection. \newline
 On a $(x \in A$ ET $x \in B) \equi (x \in A \cap B)$}.
 }{exe:4}{
-
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item $x \in I_1 \iff -3 < x <7$
+\item $x \in I_2 \iff 4 \leq x \leq 12$
+\item $x \in I_3 \iff x \leq 0]$
+\item $x \in I_4 \iff -3 \leq x < 4$
+\end{enumerate}
+\item $x \in I_1 \cap I_4 \iff -3 < x < 4$. Autrement dit $I_1 \cap I_4 = ]-3;4[$.
+\end{enumerate}
 }
 
 \exe{, difficulty=1}{
@@ -104,7 +131,24 @@ f : & \R & \to & \R & \qquad & g : & \R & \to & \R \\
 \end{enumerate}
 
 }{exe:5}{
-
+\begin{enumerate}
+\item 
+\begin{tikzpicture}[>=stealth, scale=1]
+	\begin{axis}[xmin = -4, xmax=4, ymin=-6, ymax=10, axis x line=middle, axis y line=middle, axis line style=<->,
+	 xlabel={}, ylabel={}, 		grid=both, grid style = {opacity=.5}]]
+		\addplot[blue, very thick, domain =-3:3, samples=2] {2*x+3}  node[below=3pt] {$\C_f$};
+		\addplot[blue, very thick, dashed, domain =-4:-3, samples=2] {2*x+3} ;
+		\addplot[blue, very thick, dashed, domain =3:4, samples=2] {2*x+3};
+		\addplot[red, very thick, domain =-3:3, samples=2] {1-x}  node[above=3pt] {$\C_g$};
+		\addplot[red, very thick, dashed, domain =-4:-3, samples=2] {1-x} ;
+		\addplot[red, very thick, dashed, domain =3:4, samples=2] {1-x};
+	\end{axis}
+\end{tikzpicture}
+\item $f(0) = 3$ et $g(0) = 1$, on remarque que les images de 0 par les fonctions $f$ et $g$ 
+correspondent aux points d'intersection de leurs courbes représentatives avec l'axe des ordonnées.
+\item Pour trouver l'antécédent de 0 par $f$ on résout $2x+3=0$ et on trouve $x=-\frac32$. Pour $g$ on trouve $x=1$.
+\item On résout $f(x)=g(x)$ et on trouve $x=-\frac23$.
+\end{enumerate}
 }
 
 \exe{,difficulty=1}{
@@ -127,7 +171,8 @@ f : & \R & \to & \R & \qquad & g : & \R & \to & \R \\
 		\end{enumerate}
 		\end{multicols}
 }{exe:6}{
-
+On remarque que $1-(-2) = 3$ donc i) ne convient pas. De même, $1 + \frac12 = \frac32$ donc ii) ne convient pas.
+Enfin $\frac{1-0}2 = \frac12$ donc iii) ne convient pas. En revanche iv) \textbf{pourrait} convenir.
 }
 
 \exe{, difficulty=1}{
@@ -135,7 +180,25 @@ f : & \R & \to & \R & \qquad & g : & \R & \to & \R \\
 	\[ g(0)=5 \qquad g(3)=0 \]
 	Peut-on trouver d'autres fonctions définies sur $\R$ et vérifiant ces deux conditions ? 
 }{exe:7}{
-
+On pose $g(x) = ax+b$, la condition g(0)=5 donne $a\times0 + b = 5$  soit $b=5$. 
+Ensuite, la condition $g(3)= 0$ donne $3a + 5 = 0$ soit $a=-\frac53$.
+Donc la fonction :
+\[ \begin{array}{c c c c}
+g : & \R & \to & \R \\
+& x & \mapsto & -\frac53x + 5
+\end{array} \]
+convient.
+On peut trouver d'autres fonctions vérifiant ces conditions, il suffit pour cela de considérer la fonction :
+\[ \begin{array}{c c c c}
+h : & \R & \to & \R \\
+& x & \mapsto & x(x-3)
+\end{array} \]
+Comme $h(0)=0$ et $h(3)=0$, pour tout réel $k$ la fonction définie par :
+\[ \begin{array}{c c c c}
+f : & \R & \to & \R \\
+& x & \mapsto & g(x) + k \times h(x)
+\end{array} \]
+convient. On a donc donné une infinité de solutions.
 }
 
 \exe{, difficulty=2}{
@@ -157,7 +220,7 @@ Démontrer que $f(x)=6+(x-2)^2$.
 \item Donner un nombre $x_0 \in \R$ tel que $f(x_0)=6$.
 \end{enumerate}
 }{exe:8}{
-
+Exercice de recherche.
 }
 
 %\exe{, difficulty=2}{
@@ -166,6 +229,11 @@ Démontrer que $f(x)=6+(x-2)^2$.
 %
 %}
 
+%%%%%%%%%%%%
+
+\newpage
+\fancyhead[C]{\textbf{Solutions}}
+\shipoutAnswer
 
 
 
