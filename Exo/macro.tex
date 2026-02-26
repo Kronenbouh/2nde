@@ -16,11 +16,22 @@
 
 %Normes
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
 
 %Flemme
 \newcommand{\tq}{\text{ t.q. }}
+\newcommand{\et}{\quad \text{et} \quad}
+
+%Set, parenthèses
+\newcommand{\set}[1]{\{ #1 \}}
 \newcommand{\bigset}[1]{\bigl\{ #1 \bigr\}}
 \newcommand{\Bigset}[1]{\Bigl\{ #1 \Bigr\}}
+\newcommand{\bigpar}[1]{\bigl( #1 \bigr)}
+\newcommand{\Bigpar}[1]{\Bigl( #1 \Bigr)}
+
+%Vecteurs
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
+\newcommand{\pvec}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
 
 %Commande d'exo
 \newcommand{\exe}[4]{

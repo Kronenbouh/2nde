@@ -1,0 +1,248 @@
+\input{preamble}
+\usepackage{eurosym} %les euros
+\newcommand{\C}{\mathcal{C}}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Seconde}
+\fancyhead[C]{\textbf{TD n°5 : évolution chiffrée}}
+\fancyhead[R]{\today}
+
+\exe{}{
+Dans chaque cas, dire si la quantité augmente, diminue ou reste constante.
+\begin{enumerate}
+\item La quantité est multipliée par un coefficient multiplicateur égal à $\frac13$.
+\item La quantité est multipliée par un coefficient multiplicateur égal à $\frac14 + \frac13$.
+\item La quantité subit deux évolutions successives de coefficient multiplicateur égal à $\frac12$.
+\item La quantité est multipliée par un coefficient multiplicateur égal à $1,0001$.
+\end{enumerate}
+}{exe:1}{
+Voir cours, il suffit de comparer le coefficient multiplicateur à 1.
+}
+
+\exe{}{
+Dans chacun des cas ci-dessous, proposer des valeurs cohérentes avec les contraintes.
+\begin{enumerate}
+\item Les valeurs initiales et finales d'une quantité dont la variation absolue est de 42,5.
+\item Les valeurs initiales et finales d'une quantité dont la variation relative est de 0,22.
+\item La valeur initiale d'une quantité dont la variation absolue est de $-\frac{18}3$ et la valeur finale 5.
+\item La valeur initiale d'une quantité dont la variation relative est de $\frac65$ et la valeur finale $8$.
+\end{enumerate}
+}{exe:2}{
+\begin{enumerate}
+\item On propose $x_1 = 0$ et $x_2=42,5$.
+\item On propose $x_1 = 1$ et $x_2=1,22$.
+\item On doit résoudre $5 - x_1 = -\frac{18}3$, on trouve $x_1=11$.
+\item On doit résoudre $\frac{8-x_1}{x_1} = \frac65$ soit $8-x_1 = \frac65 x_1$. On trouve $x_1= \frac{40}{11}$.
+\end{enumerate}
+}
+
+\exe{}{
+	Calculer sans calculatrice les valeurs suivantes.
+	\begin{multicols}{3}
+	\begin{enumerate}
+		\item $75\%$ de $60$
+		\item $60\%$ de $75$
+		\item $72\%$ de $25$
+		\item $68\%$ de $20$
+		\item $125\%$ de $40$
+		\item $40\%$ de $125$
+	\end{enumerate}
+	\end{multicols}
+}{exe:3}{
+	\begin{multicols}{2}
+	\begin{enumerate}
+		\item $\dfrac34 \cdot 60 = 3 \cdot \dfrac{60}4 = 3 \cdot 15 = 45$
+		\item $45$
+		\item $\dfrac14 \cdot 72 = 18$
+		\item $\dfrac15 \cdot 68 = \dfrac{136}{10} = 13,6$
+		\item $40 + \dfrac14 \cdot 40 = 50$
+		\item $50$
+	\end{enumerate}
+	\end{multicols}
+}
+
+\exe{}{
+Une quantité subit deux évolutions successives de coefficients multiplicateurs $m_1$ et $m_2$.
+\begin{enumerate}
+\item Donner la formule permettant de calculer le coefficient multiplicateur total.
+\item Donner la formule permettant de calculer une proportion d'évolution à partir d'un coefficient multiplicateur.
+\item Rappeler comment convertir une proportion en pourcentage.
+\item Application numérique : calculer le pourcentage d'évolution d'une quantité subissant deux évolutions successives 
+de coefficients multiplicateurs $m_1 = 1,5$ et $m_2 = 1,2$.
+\end{enumerate}
+}{exe:4}{
+\begin{enumerate}
+\item $m = m_1 \times m_2$.
+\item$p = m-1$.
+\item $p \% = p \times 100$.
+\item Application numérique : $m = 1,5 \times 1,2 = 1,8$ donc $p = 0,8$ et $p \% = 80 \%$. 
+Ce qui correspond à une augmentation de $80 \%$.
+\end{enumerate}
+}
+
+\exe{}{
+Dans chacun des cas ci-dessous, donner le taux d'évolution total.
+\begin{enumerate}[label=(\alph*)]
+\item Une augmentation de $20 \%$ suivie d'une augmentation de $15 \%$.
+\item Une augmentation de $10 \%$ suivie d'une baisse de $10 \%$.
+\item Une baisse de $20 \%$ suivie d'une augmentation de $25 \%$.
+\item Une augmentation d'une proportion 0,25 suivie d'une baisse d'une proportion 0,20.
+\end{enumerate}
+}{exe:5}{
+\begin{enumerate}[label=(\alph*)]
+\item On transforme d'abord chaque pourcentage d'évolution en coefficient multiplicateur.
+Avec les formules de l'exercice $\ref{exe:4}$ on trouve :
+\[ m_1 = 1 + \frac{p_1 \%}{100} = 1,2 \quad \text{et} \quad m_2 = 1 + \frac{p_2 \%}{100} = 1,15 . \]
+Le coefficient multiplicateur correspond est donc $m = 1,2 \times 1,15 = 1,38$. 
+Ce qui correspond à une évolution d'une proportion $p = m - 1 = 0,38$,
+soit une augmentation de $38 \%$.
+\item On procède de la même façon en prenant garde que, pour une baisse, la proportion est négative.
+Avec les formules de l'exercice $\ref{exe:4}$ on trouve :
+\[ m_1 = 1 + \frac{p_1 \%}{100} = 1,1 \quad \text{et} \quad m_2 = 1 + \frac{p_2 \%}{100} = 1 - 0,1 = 0,9 . \]
+Donc $m = 0,99$, soit $p=-0,01$ ce qui correspond à une baisse de $1 \%$.
+\item On procède de même et on trouve $m=1$ soit $p=0$, pas d'évolution.
+\item Même résultat.
+\end{enumerate}
+}
+
+\exe{}{
+Dans chacun des cas ci-dessous, donner le taux d'évolution réciproque.
+\begin{enumerate}[label=(\alph*)]
+\item Une augmentation de $20 \%$.
+\item Une baisse d'une proportion $0,7$.
+\item Une augmentation d'une proportion $0,45$.
+\item Une augmentation de $33 \%$.
+\end{enumerate}
+}{exe:6}{
+\begin{enumerate}[label=(\alph*)]
+\item Une augmentation de $20 \%$ correspond à un coefficient multiplicateur de 1,2.
+Le coefficient multiplicateur réciproque est donc égal à $m' = \frac{1}{1,2} = \frac{10}{12} = \frac{5}{6}$.
+Ceci correspond à une proportion d'évolution de $p' = m' - 1 = - \frac16$ soit une \textbf{baisse} d'environ $16,7 \%$.
+\item On emploie la même méthode, on trouve une augmentation d'environ $233 \%$.
+\item Une baisse d'environ $31 \%$.
+\item Une baisse d'environ $25 \%$.
+\end{enumerate}
+}
+
+\exe{}{
+  En 2023 en France, $13\%$ des espèces (faune et flore) sont considérées comme menacées à l'échelle mondiale (catégories ``vulnérable'' à ``danger critique'' de l'UICN).
+  Parmis celles-ci, $23\%$ sont en danger critique.
+  
+  Calculer le pourcentage d'espèces en danger critique par rapport au nombre total d'espèces.
+}{exe:7}{
+	Notons $E$ l'ensemble des espèces indigènes à la France, $M$ la sous-population des espèces menacées, et $C$ la sous-population des espèces en danger critique.
+	On a donc la suite d'inclusions
+		\[ C \subset M \subset E. \]
+	
+	Le texte donne les informations
+		\begin{align*}
+			p_M = 0,13 && \text{et} && p_{C / M }= 0,23.
+		\end{align*}
+	Selon la formule du cours, $p_C = p_M \times p_{C / M} = 0,23 \times 0,13 = 0,0299$.
+	Donc les espèces en danger critique constituent $2,99 \%$ des espèces.
+
+	Les proportions sont ainsi multiplicatives. Attention à ne pas naïvement multiplier les pourcentages, car $13\times 23 = 299$.
+}
+
+\exe{, difficulty=1}{
+	Lucille dépose 100 \euro~ à la banque sur un compte rémunéré à $3 \%$ par an. 
+	Ce qui signifie que, chaque année, elle recevra un versement correspondant à $3 \%$ de la somme présente sur le compte.
+	
+	\begin{enumerate}
+		\item Combien d'argent aura-t-elle après $1$ ans ?
+		\item Combien d'argent aura-t-elle après $2$ ans ?
+		\item Combien d'argent y aura-t-il sur son compte après $100$ ans ?
+	\end{enumerate}
+	
+	%\hfill
+}{exe:8}{
+	\begin{enumerate}
+		\item On multiplie $100$ par $1,03$, ce qui donne $100 \times 1,03 = 103$ \euro.
+		\item On multiplie $100$ par $1,03$ puis on multiplie ce résultat par $1,03$, ce qui revient à calculer $100 \times 1,03^2$.
+		\item En suivant le même raisonnement, on multiplie $100$ fois par $1,03$, ce qui donne 
+		$100 \times 1,03^{100} \approx 1921,86$ \euro.
+	\end{enumerate}
+	Lucille a multiplié son placement par plus de 19 !
+}
+
+\exe{, difficulty=1}{
+Un commerçant diminue le prix d'un article de 1~000 \euro~à 999 \euro. 
+Calculer le pourcentage d'évolution nécessaire pour que le prix de l'article revienne à sa valeur initiale.
+}{exe:9}{
+Le coefficient multiplicateur correspond à la baisse du prix est $m = \frac{999}{1000}$. 
+Le coefficient multiplicateur réciproque est donc égal à $m' = \frac{1}{m} = \frac{1000}{999}$.
+Ceci correspond à une proportion de $p' = m' - 1 = \frac1{999}$ soit une augmentation d'environ $0,1001 \%$.
+}
+
+\exe{, difficulty=2}{
+	Une livre anglaise équivaut à 0,453 kilogrammes environ.
+	Pour convertir une quantité $x$ de livres anglaises en kilogrammes, la procédure suivante est proposée.
+		\begin{enumerate}[label=\roman*)]
+			\item Prendre d'abord la moitié de $x$ ; puis
+			\item Diminuer le résultat de 10\%.
+		\end{enumerate}
+	\begin{enumerate}
+		\item 
+		Convertir 10 livres anglaises en kilogrammes de deux façon différentes,
+			\begin{enumerate}[label=(\alph*)]
+				\item en utilisant que 1 livre = 0,453 kilogrammes ; et
+				\item en utilisant la procédure proposée.
+			\end{enumerate}
+		\item 
+		Calculer le coefficient multiplicateur qui permet de convertir une quantité de livres anglaises en kilogrammes
+			\begin{enumerate}[label=(\alph*)]
+				\item lorsqu'on utilise que 1 livre = 0,453 kilogrammes ; et
+				\item lorsqu'on utilise la procédure proposée.
+			\end{enumerate}
+		\item
+		Donner les évolutions associées aux deux coefficient multiplicateurs.
+		\item
+		Calculer l'erreur relative de la procédure proposée : quelle évolution permet d'obtenir la valeur de la procédure à partir de la valeur réelle de conversion ?
+		\item
+		Montrer que l'erreur absolue, elle, peut être aussi grande que voulue.
+		L'erreur absolue entre deux valeurs est la différence entre la plus grande et la plus petite valeur.
+	\end{enumerate}
+}{exe:10}{
+	\begin{enumerate}
+		\item 
+			\begin{enumerate}[label=(\alph*)]
+				\item
+				Par proportionnalité, 10 livres équivalent à 4,53 kilogrammes.
+				\item 
+				En utilisant la procédure proposée, on diviser 10 par 2 pour trouver 5, puis on soustrait 10\%, ce qui donne $5-0,5 = 4,5$ kilogrammes.
+			\end{enumerate}
+		\item 
+		Calculer le coefficient multiplicateur qui permet de convertir une quantité de livres anglaises en kilogrammes
+			\begin{enumerate}[label=(\alph*)]
+				\item 
+				Par proportionnalité, $x$ livres équivaut à $0,453x$ kilogrammes : le coefficient est $0,453$.
+				\item
+				La procédure calcule d'abord $0,5x$ puis $0,9 \times 0,5 x = (0,9 \times 0,5) x = 0,45x$.
+				Le coefficient est donc $0,45$.
+			\end{enumerate}
+		\item
+		Multiplier par $0,453$ équivaut à une diminution de $54,7\%$.
+		Multiplier par $0,45$ équivaut à une diminution de $55\%$.
+		\item
+		On cherche le coefficient $CM$ qui vérifie $CM \times 0,453x = 0,45x \iff CM = \frac{0,45}{0,453} \approx 0,993$
+		Ce coefficient correspond à une diminution de $0,7\%$ environ : c'est l'erreur relative commise par la procédure.
+		\item
+		On calcule ici $0,453x - 0,45x = 0,003x$, qui peut être aussi grand que voulu, pourvu que $x$ soit très grand également.
+		Par exemple, pour obtenir une erreur de $10~000$, il faut prendre $x=\frac{10~000}{0,003} \approx 3~333~334$.
+		
+		L'erreur relative, quant à elle, sera toujours de $0,7\%$ environ.
+		Cependant, $0,7\%$ d'une très grande valeur est toujours une très grande valeur !
+	\end{enumerate}
+}
+
+%%%%%%%%%%%%
+
+\newpage
+\fancyhead[C]{\textbf{Solutions}}
+\shipoutAnswer
+
+
+
+\end{document}

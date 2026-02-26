@@ -1,0 +1,279 @@
+\input{preamble}
+\renewcommand{\D}{\mathcal{D}}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Seconde}
+\fancyhead[C]{\textbf{TD n°7 : Arithmétique}}
+\fancyhead[R]{\today}
+
+\exe{}{
+Sans utiliser de calculatrice, déterminer la parité des nombres ci-dessous :
+\begin{multicols}{2}
+\begin{enumerate}[label=(\alph*)]
+\item $13~251 + 24~763$
+\item $32~280 - 75~813$
+\item $128~234 \times 850~437$
+\item $(21~756)^3$
+\item $(124~843)^2 - 21~033$
+\item $4~218 + 5~433 + 7~829 + 2~195$
+\end{enumerate}
+\end{multicols}
+}{exe:1}{
+\begin{multicols}{2}
+\begin{enumerate}[label=(\alph*)]
+\item pair
+\item impair
+\item impair
+\item pair
+\item pair
+\item impair
+\end{enumerate}
+\end{multicols}
+}
+
+\exe{}{
+	On introduit la notation suivante : $\D_n = \set{ k \in \N \tq \text{ k divise n}}$.
+	Donner $\D_1, \D_2, \D_3, \D_4, \D_5, \D_6, \D_7, \D_8,$ et $\D_9$.
+}{exe:2}{
+	\begin{multicols}{2}
+	$D_1 = \{ 1 \}$
+	
+	$D_2 = \{ 1 ; 2\}$
+	
+	$D_3 = \{ 1 ; 3\}$
+	
+	$D_4 = \{ 1 ; 4 ; 2 \}$
+	
+	$D_5 = \{ 1 ; 5\}$
+	
+	$D_6 = \{ 1 ; 6 ; 2 ; 3\}$
+	
+	$D_7 = \{ 1 ; 7\}$
+	
+	$D_8 = \{ 1 ; 8 ; 2 ; 4\}$
+	
+	$D_9 = \{ 1 ; 3 ; 9\}$
+	\end{multicols}
+}
+
+\exe{}{
+	Décomposer les nombres suivants en produit de facteurs premiers.
+	\begin{multicols}{3}
+	\begin{enumerate}[label=\roman*)]
+		\item  $64 $
+		\item $25$
+		\item $81$
+		\item  $6 \times 121 \times 64$
+		\item $45 \times 125 \times 9$
+		\item $10^2 \times 15^3$
+	\end{enumerate}
+	\end{multicols}
+}{exe:3}{
+
+	\begin{multicols}{3}
+	\begin{enumerate}[label=\roman*)]
+		\item  $64 = 2^6 $
+		\item $25 = 5^2$
+		\item $81 = 9^2$
+		\item  $6 \times 121 \times 64 = 2^7 \times 3 \times 11^2$
+		\item $45 \times 125 \times 9 = 3^4 \times 5^4$
+		\item $10^2 \times 15^3 = 2^2 \times 3^3 \times 5^5$
+	\end{enumerate}
+	\end{multicols}
+}
+
+\exe{}{
+On donne :
+\[ 3~983 = 43 \times 7 + 14 \times 263 \quad ; \quad 13 \times 257 + 13 \times 48 = 3~978 \quad ; \quad 3~978 \times 3~983 = 15~844~374 \]
+Justifier que 3~983 est divisible par 7, que 3~978 est divisible par 13 et que 15~844~374 est divisible par 91.
+}{exe:4}{
+On fait apparaitre les formes $d \times k$ avec $d$ le diviseur voulu :
+\begin{align*} 
+3~983 & = 43 \times 7 + 7 \times 2 \times 263 & = 7 \times (43 + 2 \times 263) \\
+3~978 & = 13 \times 257 + 13 \times 48 & = 13 \times (257 + 48) \\
+3~983 \times 3~978 & = 7 \times (43 + 2 \times 263) \times 13 \times (257 + 48) & = 91 \times (43 + 2 \times 263) \times (257 + 48) 
+\end{align*}
+car $7 \times 13 = 91$.
+}
+
+\exe{}{
+	On considère le nombre $n=2^6 \times 3^2 \times 7^7$.
+	Quelles sont les affirmations exactes ? Justifier.
+	\begin{multicols}{2}
+	\begin{enumerate}[label=\alph*)]
+		\item $2^3 \times 3^3$ divise $n$
+		\item $2^3 \times 7^3$ divise $n$
+		\item $2^3 \times 7$ divise $n$
+		\item $3^2 \times 7^7$ divise $n$
+	\end{enumerate}
+	\end{multicols}
+}{exe:5}{
+
+	\textbf{Remarque importante} : si $d$ divise $n$, on peut écrire 
+		\[ n = d \times k, \]
+	pour $k \in \N$ un entier naturel.
+	
+	En décomposant $d$ et $k$ en produit de nombres premiers, on trouve la décomposition de $n$ (voir exercice \ref{exe:3}).
+	Ainsi, si un nombre premier apparaît dans la décomposition de $d$, il doit apparaître au moins autant de fois dans la décomposition de $n$.
+	
+
+	\begin{enumerate}[label=\alph*)]
+		\item $2^3 \times 3^3$ ne divise pas $n$ car $3$ n'apparaît que $2$ fois dans la décomposition de $n$.
+		\item $2^3 \times 7^3$ divise $n$ car $n = (2^3 \times 7^3) \times (2^3 \times 3^2 \times 7^4)$.
+		\item $2^3 \times 7$ divise $n$ car $n = (2^3 \times 7) \times ( 2^3 \times 3^2 \times 7^6)$.
+		\item $3^2 \times 7^7$ divise $n$ car $n=(3^2 \times 7^7) \times 2^6 $.
+	\end{enumerate}
+}
+
+\exe{}{
+	Exprimer chaque valeur suivante sous forme de fraction irréductible.
+	\begin{multicols}{4}
+	\begin{enumerate}[label=\alph*), itemsep=10pt]
+		\item $1-\dfrac{4}{44}$
+		\item $\dfrac{15}{27}$
+		\item $\dfrac{8}{3} + 6$
+		\item $\dfrac{65}{5^2}$
+		\item $\dfrac{6}{32}\times\dfrac{2}{3}$
+		\item $3-\dfrac{38}{20}$
+		\item $\left(\dfrac{10}{44}\right)^{-1}$
+		\item $\dfrac{6}{18}\times2 + 1$
+		\item $\left(\dfrac{66}{99}\right)^2$
+		\item $\dfrac{23}{18} + \dfrac12$
+		\item $\dfrac{34}{20}$
+		\item $2 - \dfrac{9}{5}$
+	\end{enumerate}
+	\end{multicols}
+}{exe:6}{
+	\begin{multicols}{4}
+	\begin{enumerate}[label=\alph*), itemsep=10pt]
+		\item $\dfrac{10}{11}$
+		\item $\dfrac{5}{9}$
+		\item $\dfrac{26}{3}$
+		\item $\dfrac{13}{5}$
+		\item $\dfrac{1}{18}$
+		\item $\dfrac{-11}{10}$
+		\item $\dfrac{22}{5}$
+		\item $\dfrac{5}{3}$
+		\item $\dfrac{4}{9}$
+		\item $\dfrac{16}{9}$
+		\item $\dfrac{17}{10}$
+		\item $\dfrac{1}{5}$
+	\end{enumerate}
+	\end{multicols}
+}
+
+\exe{}{
+Soit $p$ un nombre premier. Justifier que s'il existe deux entiers $a$ et $b$ tels que $p=a \cdot b$ alors $a=1$ ou $b=1$.
+}{exe:7}{
+Par définition d'un nombre premier, si $a$ et $b$ sont différents de $1$, alors $p$ admettrait un autre diviseur que 1 ou lui-même.
+}
+
+\exe{, difficulty=1}{
+	Soit $n\in\N$ un entier naturel.
+	Montrer que $\dfrac{n(n+1)}2$ est toujours un entier.
+}{exe:8}{
+	Comme $n$ et $n+1$ se suivent, l'un des deux est pair.
+	Leur produit est donc pair, et la division par 2 donne un entier.
+}
+
+
+\exe{, difficulty=1}{
+Un joueur a besoin d'un dé à 3 faces. Comme il ne possède que des dés à 6 faces, il décide de \og simuler \fg~un dé à 3 faces en suivant la règle suivante :
+\begin{itemize}
+\item les faces 1 et 2 donnent 1 ;
+\item les faces 3 et 4 donnent 2 ;
+\item les faces 5 et 6 donnent 3.
+\end{itemize}
+En suivant la même logique, déterminer les différents dés que vous pouvez simuler avec un dé à 24 faces.
+}{exe:9}{
+On a $24 = 2^3 times 3$ et $\D_24 = \{1, 2, 3, 4, 6, 8, 12 \}$, on peut donc simuler un dé à : 1 face, 2 faces, 3 faces, 4 faces, 6 faces, 8 faces et 12 faces.
+}
+
+\exe{, difficulty=1}{
+\begin{enumerate}
+\item Donner la décomposition en facteurs premiers de 6 et 15. En déduire l'ensemble des diviseurs \textbf{communs} à 6 et 15.
+\item Utiliser cette méthode pour déterminer l'ensemble des diviseurs communs des nombres 420 et 490. Parmi l'ensemble de ces diviseurs, lequel est le plus grand ?
+\item Soient $p$ et $q$ deux nombres premiers. Quel est le plus grand diviseur commun de $p$ et $q$ ?
+\end{enumerate}
+}{exe:10}{
+\begin{enumerate}
+\item $6 = 2 \times 3$ et $15 = 3 \times 5$, donc l'ensemble des diviseurs communs de 6 et 15 est $\set{1, 3}$.
+\item $420 = 2^2 \times 3 \times 5 \times 7$ et $490 = 2 \times 5 \times 7^2$, 
+l'ensembles des diviseurs communs est $\set{1, 2, 5, 7, 10, 14, 35, 70}$. Le plus grand est 70.
+\item Si $p=q$ alors c'est $p$, sinon c'est 1.
+\end{enumerate}
+}
+
+\exe{, difficulty=1}{
+	On cherche à résoudre l'équation cubique suivante, où $x\in\Z$ est entier :
+		\[ x^3 + 3x^2 - x - 108 = 0. \]
+	\begin{enumerate}
+		\item
+		Montrer que l'équation est équivalente à 
+			\[  (x-1)(x+1)(x+3) = 105. \]
+		\item	
+		Donner la décomposition en facteurs premiers de 105.
+		\item
+		En déduire toutes les valeurs $x\in\Z$ solutions de l'équation originale.
+	\end{enumerate}
+}{exe:11}{
+		\begin{enumerate}
+		\item
+		On développe le produit $(x-1)(x+1)(x+3)$, on trouve :
+		\begin{align*}
+			(x-1)(x+1)(x+3) & = (x-1)(x^2+3x+x+3) \\
+			& = (x-1)(x^2+4x+3) \\
+			& = x^3+4x^2+3x - x^2 - 4x -3 \\
+			& = x^3 + 3x^2 - x - 3
+		\end{align*}
+		Donc $(x-1)(x+1)(x+3) = 105 \iff x^3 + 3x^2 - x - 3 = 105 \iff x^3 + 3x^2 - x - 108 = 0$
+		\item	
+		$105 = 3 \times 5 \times 7$.
+		\item
+		On cherche $x \in \Z$ tel que $(x+1)(x-1)(x+3) = 3 \times 5 \times 7$. En tenant compte de la relation d'ordre $x-1 < x+1 < x+3$ et par unicité de la décomposition en facteurs premiers, on en déduit que :
+		\begin{align*}
+		x-1 & = 3 \\
+		x+1 & = 5 \\
+		x+3 & = 7 
+		\end{align*}
+		Soit $x=4$.
+	\end{enumerate}
+}
+
+\exe{, difficulty=2}{
+Soit $k \in \N$. Déterminer une règle générale pour connaître la parité de la somme de $k$ nombres impairs quelconques.
+}{exe:12}{
+Si $k$ est pair, on peut regrouper les impairs par couples, la somme des deux impairs du coupe est un nombre pair. On somme ensuite les $\frac{k}{2}$ nombres pairs obtenus et on trouve un nombre pair.
+Si $k$ est impair, on aura $\frac{k-1}{2}$ couples dont la somme est paire et un impair isolé, donc la somme totale sera impaire.
+}
+
+\exe{,difficulty=2}{
+On donne $1820 = 2^2 \times 5 \times 7 \times 13$.
+\begin{enumerate}
+\item Donner l'ensemble des nombres premiers divisant 1820. Expliquer.
+\item On considère un entier $n$ dont la décomposition en facteurs premiers comporte les nombres premiers $p_1, p_2, \dots, p_d$.
+Est-il possible qu'un nombre premier $p$ n'appartenant pas à la liste $(p_1, p_2, \dots, p_d)$ divise $n$ ? Justifier.
+\item En déduire le lemme d'Euclide : \textit{Soient $a$ et $b$ deux entiers. Si un nombre premier $p$ divise le produit $ab$, alors $p$ divise $a$ ou $b$}.
+\end{enumerate}
+}{exe:13}{
+\begin{enumerate}
+\item Il suffit d'isoler les nombres premiers dans la décomposition en facteurs premiers de 1820. Ainsi 2, 5, 7 et 13 divisent 1820.
+\item On peut écrire $n = p_1^{\alpha_1} \cdot p_2^{\alpha_2} \cdot \dots \cdot p_d^{\alpha_d}$ avec les nombres $\alpha_1, \dots, \alpha_d$ des entiers supérieurs ou égaux à 1.
+Si $p$ divise $n$, on peut écrire $n=p \cdot k$, avec $k \in \Z$. En d'autres termes :
+\[ p \cdot k = p_1^{\alpha_1} \cdot p_2^{\alpha_2} \cdot \dots \cdot p_d^{\alpha_d} \]
+et en divisant, par exemple, à gauche et à droite par $p_1$ on conclut que $p$ est divisible par $p_1$ ce qui est absurde. On aboutit donc à une contradiction.
+\item Si $p$ divise le produit $ab$, selon la question précédente, il divise un des nombres premiers apparaissant dans l'une ou l'autre des décomposition en facteurs premiers de $a$ et $b$.
+Or, le décomposition en facteurs premiers de $ab$ ne peut pas comporter d'autres nombres premiers que ceux apparaissant dans celles de $a$ et $b$ (par définition d'un nombre premier et par unicité de cette décomposition).
+\end{enumerate}
+}
+
+
+%%%%%%%%%%%%
+
+\newpage
+\fancyhead[C]{\textbf{Solutions}}
+\shipoutAnswer
+
+\end{document}

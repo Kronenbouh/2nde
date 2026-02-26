@@ -1,0 +1,144 @@
+\input{preamble.tex}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead[L]{Seconde}
+\fancyhead[C]{\textbf{DS n°6 - Arithmétique}}
+\fancyhead[R]{\today}
+
+\reversemarginpar
+
+\null\vspace{-30pt}
+Nom / Prénom : \\
+
+Consignes particulières : 
+\begin{itemize}[label=$\bullet$]
+	\item 
+	La calculatrice est \textbf{interdite}.
+		\item 
+	L'exercice \ref{exe:1} peut être fait entièrement sur la feuille d'évaluation. 
+	Écrire son nom avant de rendre le sujet pour qu'il soit corrigé.
+	\item 
+	Toute trace de recherche est prise en compte.
+	%\item 
+	%L'abbréviation $\tq$ signifie ``tel que''.
+\end{itemize}
+
+\hrule
+
+\exe{4}{
+Pair ou impair ? Cochez la bonne réponse
+	\begin{center}
+	\begin{tabular}{c c c}
+		\hspace{10cm} & Pair & Impair \\
+		$129~767 + 60~012$ & \resizebox{10pt}{!}{$\square$} & \resizebox{10pt}{!}{$\square$}   \\
+		$340~841 - 122~195$ & \resizebox{10pt}{!}{$\square$} & \resizebox{10pt}{!}{$\square$}   \\
+		$2^5 \times 3^8 \times 7^9 \times 11^4$ & \resizebox{10pt}{!}{$\square$}  & \resizebox{10pt}{!}{$\square$}   \\
+		$27 \times 42~657 + 48 \times 51~444$ & \resizebox{10pt}{!}{$\square$} & \resizebox{10pt}{!}{$\square$}
+	\end{tabular}
+	\end{center}
+}{exe:1}{
+\begin{multicols}{2}
+\begin{enumerate}[label=(\alph*)]
+\item impair
+\item pair
+\item pair
+\item impair
+\end{enumerate}
+\end{multicols}
+}
+
+\exe{4}{
+	Décomposer les nombres suivants en produits de facteurs premiers.
+	\begin{multicols}{2}
+	\begin{enumerate}[label=\roman*)]
+		\item  $360$
+		\item $165$
+		\item $12~100$
+		\item  $144 \times 9$
+	\end{enumerate}
+	\end{multicols}
+}{exe:2}{
+
+	\begin{multicols}{2}
+	\begin{enumerate}[label=\roman*)]
+		\item $360 = 2^3 \times 3^2 \times 5$
+		\item $165 = 3 \times 5 \times 11$
+		\item $12~100 = 2^2 \times 5^2 \times 11^2$
+		\item $144 \times 9 = 2^4 \times 3^4$
+	\end{enumerate}
+	\end{multicols}
+}
+
+\exe{4}{
+	Exprimer chaque valeur suivante sous forme de fraction irréductible.
+	\begin{multicols}{2}
+	\begin{enumerate}[label=\alph*), itemsep=10pt]
+		\item $\dfrac{105}{63}$
+		\item $\dfrac{3~150}{5~250}$
+		\item $1 - \dfrac{24}{42}$
+		\item $\dfrac{44}{147} \times \dfrac{63}{55}$
+	\end{enumerate}
+	\end{multicols}
+}{exe:3}{
+	\begin{multicols}{2}
+	\begin{enumerate}[label=\alph*), itemsep=10pt]
+		\item $\dfrac{105}{63} = \dfrac53$
+		\item  $\dfrac{3~150}{5~250} = \dfrac35$
+		\item $\dfrac{3}{7}$
+		\item $\dfrac{44}{147} \times \dfrac{63}{55} = \dfrac{12}{35}$
+	\end{enumerate}
+	\end{multicols}
+}
+
+\exe{4}{
+Justifier que les nombres suivants sont premiers ou pas.
+    \begin{multicols}{2}
+\begin{enumerate}[itemsep=2em]
+	\item \begin{minipage}[t]{\linewidth} 327 \end{minipage}
+	\item \begin{minipage}[t]{\linewidth} 130 \end{minipage}
+	\item \begin{minipage}[t]{\linewidth} 155 \end{minipage}
+	\item \begin{minipage}[t]{\linewidth} 97 \end{minipage}
+\end{enumerate}
+\end{multicols}
+}{exe:4}{
+\begin{enumerate}[itemsep=1em]
+	\item Comme 3 + 2 + 7 = 12 est un multiple de 3 donc 327 aussi, il admet donc au moins trois diviseurs qui sont 1, 3 et lui-même,
+	\\{\bfseries \color[HTML]{f15929}327 n'est donc pas premier}.
+	\item Comme 130 est pair, il admet donc au moins trois diviseurs qui sont 1, 2 et lui-même, 
+	{\bfseries \color[HTML]{f15929}130 n'est donc pas premier}.
+	\item Comme le chiffre des unités de 155 est un 5, alors 155 est divisible par 5, il admet donc au moins trois diviseurs qui sont 
+	1, 5 et lui-même, {\bfseries \color[HTML]{f15929}155 n'est donc pas premier}.
+	\item En effectuant la division euclidienne de 97 par tous les nombres premiers inférieurs à $\sqrt{97}$, c'est-à-dire par les
+	 nombres 2, 3, 5 et 7, le reste n'est jamais nul, {\bfseries \color[HTML]{f15929}97 est donc un nombre premier}.
+\end{enumerate}
+}
+
+\exe{4}{
+	Donner l'ensemble des diviseurs de 48, $\mathcal{D}_{48}$, et en déduire les entiers naturels $x\in\N$ vérifiant $x^2 - 8x= 48$.
+}{exe:5}{
+	$\D_{48} = \bigset{1 ; 48 ; 2 ; 24 ; 3 ; 16 ; 4 ; 12 ; 6 ; 8}$.
+
+	Soit $x\in\N$ vérifiant $x^2 - 8x = 48 \iff x(x-8) = 48$.
+	Comme $x\in\N$ est entier, $x-8$ l'est aussi, et les deux nombres divisent 48.
+	
+	On cherche donc deux éléments de $\D_{48}$ dont le produit vaut 48 et qui sont séparés de $8$ unités.
+	Par inspection, seul $4\times12 = 48$ et donc $x=12$ fonctionne, et c'est la seule solution dans $\N$ de l'équation.
+	
+	Par symétrie, il existe une autre solution, $x = -4$, qui appartient à $\Z$ mais pas à $\N$.
+}
+
+\exe{}{
+(Bonus)
+Soit $n \in \N$ un entier. Démontrer que le nombre $S = 1 + 2 + 3 + \dots + n$ est pair.
+}{exe:6}{
+
+}
+
+%%%%%%%%%%%%
+%
+%\newpage
+%\fancyhead[C]{\textbf{Solutions}}
+%\shipoutAnswer
+
+\end{document}

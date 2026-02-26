@@ -772,7 +772,7 @@ ou encore le pourcentage d'individus appartenant à une sous-population est comp
 
 \begin{proof}
 Comme $F \subseteq E$, on a $0 \leq \abs{F} \leq \abs{E}$, d'où le résultat.
-\end{rmq}
+\end{proof}
 
 \begin{rmq}
 Pour convertir une proportion $p$ en un pourcentage, il suffit de la multiplier par 100. 
@@ -802,27 +802,27 @@ Ainsi, le pourcentage de secondes ayant l'option Chinois dans le lycée est éga
 \begin{defn}[Augmentation, diminution]
 Soit $x$ une quantité quelconque et $p \geq 0$ une proportion.
 Une \textbf{augmentation} de $x$ d'une proportion $p \geq 0$ correspond à la somme
-\[ x + x\cdot p = x \cdot (1+p).\]
+\[ x + x\cdot p = x \times (1+p).\]
 Une \textbf{diminution} de $x$ d'une proportion $0\leq p \leq 1$ correspond à la différence
-\[ x - x\cdot p = x \cdot (1-p).\]
+\[ x - x\cdot p = x \times (1-p).\]
 \end{defn}
 
 \begin{rmq}
 On peut généraliser ces formules à une proportion $p$ négative. On a alors une seule formule :
-\[ x + x\cdot p = x \cdot (1+p) , \]
+\[ x + x\cdot p = x \times (1+p) , \]
 et si $p<0$ alors l'évolution correspond à une diminution de $x$ d'une proportion $p$.
 \end{rmq}
 
 \begin{prop}[Evolution en pourcentage]
 Soit $x$ une quantité quelconque et $p \%$ un pourcentage. Une augmentation de $p \%$ de $x$ correspond à l'opération :
-\[ x \cdot \left (1 + \dfrac{p \%}{100} \right ) . \]
+\[ x \times \left (1 + \dfrac{p \%}{100} \right ) . \]
 Inversement, une diminution de $p \%$ de $x$ correspond à l'opération :
-\[ x \cdot \left (1 - \dfrac{p \%}{100} \right) . \]
+\[ x \times \left (1 - \dfrac{p \%}{100} \right) . \]
 \end{prop}
 
 \begin{ex}
 Un commerçant diminue le prix d'un article de $15 \%$. En notant $x$ le prix de l'article \textbf{avant diminution}, 
-le prix après diminution correspond à $x \cdot \left ( 1 - \frac{15}{100} \right ) = x \cdot 0,85$.
+le prix après diminution correspond à $x \times \left ( 1 - \frac{15}{100} \right ) = x \times 0,85$.
 \end{ex}
 
 \begin{prop}[Astuce de calcul]
@@ -850,7 +850,7 @@ La variation relative de cette quantité correspond au rapport  :
 Le prix au kilogramme de la farine de blé passe de 0,74 \euro~ à 0,82 \euro.
 \begin{itemize}
 \item
-La variation absolue de ce prix est égale à 0,08 \euro soit 8 centimes.
+La variation absolue de ce prix est égale à 0,08 \euro~ soit 8 centimes.
 \item 
 La variation relative de cette quantité est égale à :
 \[ \dfrac{0,82 - 0,74}{0,74} \approx 0,108 \] 
@@ -912,6 +912,11 @@ En d'autres termes, lors d'évolutions successives, les facteurs multiplicatifs 
 \end{center}
 \end{thm}
 
+\begin{proof}
+Notons $x_1$ la valeur initiale. Après les deux évolutions, la valeur finale est $x_2 = x_1 \times m_1 \times m_2$, 
+donc $m = m_1 \times m_2$.
+\end{proof}
+
 \begin{thm}[Evolutions réciproques]
 On considère une grandeur quelconque subissant une évolution de coefficient multiplicateur $m$.
 Alors le coefficient multiplicateur qui permet de revenir à la valeur initiale de cette grandeur correspond à :
@@ -936,5 +941,694 @@ Alors le coefficient multiplicateur qui permet de revenir à la valeur initiale 
 	}
 	\end{center}
 \end{thm}
+
+\begin{proof}
+Notons $x_1$ la valeur initiale. Après les deux évolutions, la valeur finale est inchangée soit $x_1 = x_1 \times m \times m'$, 
+donc $m'=\dfrac1{m}$.
+\end{proof}
+
+\chapter{Fonction carré racine carrée et valeur absolue}
+
+\section{Fonction carré}
+
+\subsection{Définition et propriétés}
+
+\begin{nota}
+Pour tout nombre réel $x$ on note $x^2 = x \cdot x$ le produit de $x$ par lui-même.
+	On lit « $x$ au carré » ou « $x$ carré ».
+\end{nota}
+
+\begin{defn}[Fonction carré]
+On appelle fonction carrée la fonction définie sur $\R$ et, qui à tout nombre réel $x$ associe son carré :
+\[ \begin{array}{c c c}
+\R & \to & \R \\
+x &\mapsto & x^2
+\end{array} \]
+\end{defn}
+
+\begin{thm}
+	Le signe d'un produit suit les règles suivantes, où la positivité et la négativité sont strictes :
+	\begin{multicols}{3}
+	\begin{enumerate}[label=(\roman*)]
+		\item $\oplus \cdot \oplus = \oplus$
+		\item $\ominus \cdot \ominus = \oplus$
+		\item $\oplus \cdot\ominus = \ominus$
+	\end{enumerate}
+	\end{multicols}
+\end{thm}
+
+\begin{thm}[Positivité du carré]
+	Pour n'importe quel $x\in\R$, $x^2 \geq 0$ avec égalité uniquement en $x=0$.
+\end{thm}
+
+\begin{proof}
+La positivité du carré est une conséquence de la règle des signes. 
+De plus, on a trivialement $0^2 = 0$. Si maintenant $x \neq 0$, alors $x \times x \neq 0$ comme produit de deux nombres non nuls.
+\end{proof}
+
+\begin{prop}[Symétrie du carré]
+Pour tout nombre réel $x$ on a $x^2 = (-x)^2$.
+\end{prop}
+
+\begin{proof}
+C'est à nouveau une conséquence directe de la règle des signes.
+\end{proof}
+
+\begin{defn}[Fonction paire]
+Soit $f$ une fonction numérique. On dit que $f$ est paire si, pour tout $x$ réel, on a :
+\[ f(x) = f(-x) . \]
+Graphiquement, la courbe représentative $\C_f$ est symétrie par rapport à l'axe des ordonnées.
+\end{defn}
+
+\begin{coro}[Parité de la fonction carré]
+	La fonction $f(x) = x^2$ vérifie $f(-x)=f(x)$ pour tout $x\in\R$, c'est donc une fonction \textbf{paire}
+	La courbe représentative de la fonction carrée est symétrie par rapport à l'axe des ordonnées.
+\end{coro}
+
+\begin{rmq}
+\begin{multicols}{2}
+\begin{flushleft}
+La représentation graphique de la fonction carré est donnée ci-contre :
+\end{flushleft}
+\begin{tikzpicture}[>=stealth, scale=1]
+\begin{axis}%
+    [
+        grid=major,  
+        x=5mm,
+        y=5mm,
+        xtick={-10,-9,...,10},   
+        xmin=-4,
+        xmax=4,
+        xlabel={\scriptsize  $x$},
+        axis x line=middle,
+        ytick={0,...,10},
+        tick label style={font=\tiny},
+        ymin=-0.5,
+        ymax=9,
+        ylabel={\scriptsize $x^2$},
+        axis y line=middle,
+        no markers,
+        samples=100,
+        domain=-10:10,
+        restrict y to domain=-20:20
+    ]
+    \addplot[thick,samples=400] (x,{x^2});
+\end{axis} 
+\end{tikzpicture}
+\end{multicols}
+\end{rmq}
+
+\begin{thm}[Propriétés algébriques]
+	Soient $a, b \in\R$ deux réels, on a :
+		\begin{enumerate}[label=(\roman*)]
+			\item $(a \cdot b)^2 = a^2 \cdot b^2$ ;
+			\item si $b \neq 0, \left(\dfrac{a}{b}\right)^2 = \dfrac{a^2}{b^2}$.
+		\end{enumerate}
+\end{thm}
+
+\subsection{Identités remarquables}
+
+\begin{ax}[Distributivité]
+Pour $a,b,c\in\R$ nombres réels, on a
+		\[ c \cdot (a+b) = (a+b) \cdot c = a\cdot c + b \cdot c. \]
+\end{ax}
+
+\begin{thm}[Identités remarquables]
+	Pour tous les $a,b\in\R$ réels, on a les identités
+		\begin{align*}
+			(a+b)(a-b) &= a^2 - b^2 \\
+			(a+b)^2 &= a^2 + 2ab + b^2 \\
+			(a-b)^2 &= a^2 - 2ab + b^2
+		\end{align*}
+	Remarquons que les points médians $\cdot$ (ou les symboles $\times$) de la multiplication disparaissent et sont sous-entendus.
+	En lisant $2ab$, il faut comprendre \og 2 fois $a$ fois $b$ \fg, aussi noté $2\cdot a \cdot b$.
+\end{thm}
+
+\begin{proof}
+Toutes les identités remarquables découlent de l'axiome de distributivité.
+	La première se déduit en développant le produit $(a+b)\cdot (a-b)$.
+		\begin{align*}
+			(a+b)\cdot(a-b) &= a \cdot(a-b) + b \cdot (a-b) \\
+							&= a \cdot a + a \cdot (-b) + b\cdot a + b \cdot(-b)\\
+							&= a^2 - ab + ba - b^2 \\
+							&= a^2 - b^2
+		\end{align*}
+	La deuxième s'obtient similairement.
+		\begin{align*}
+			(a+b)^2 &= (a+b)\cdot(a+b) \\
+						&= a \cdot(a+b) + b \cdot (a+b) \\
+						&= a \cdot a + a \cdot b + b\cdot a + b \cdot b \\
+						&= a^2 + ab + ba + b^2 \\
+						&= a^2 +2ab + b^2
+		\end{align*}
+	Pour obtenir la dernière, on peut remplacer $-b$ par $b$ de la façon suivante.
+		\begin{align*}
+			(a-b)^2 &= \bigl( a + (-b) \bigr)^2 \\
+					&= a^2 + 2\cdot a\cdot (-b) + (-b)^2 \\
+					&= a^2 - 2ab + b^2.
+		\end{align*}
+\end{proof}
+
+\section{Fonction racine carrée}
+
+\begin{defn}[Racine carrée]	
+Soit $x \in \R, x\geq0$ un réel positif ou nul.
+	La quantité $\sqrt{x}$, lue « \textbf{racine carrée} de $x$ », est l'unique nombre réel positif ou nul vérifiant
+		\[ (\sqrt{x})^2 = x. \]
+	C'est donc l'opération inverse de la mise au carré.
+\end{defn}
+
+\begin{ex}
+On a $\sqrt{81}=9$ car $9^2 = 81$.
+\end{ex}
+
+\begin{prop}
+Soit $x$ un nombre réel \textbf{négatif}. Alors, la racine carrée de $x$ \textbf{n'est pas définie} dans $\R$.
+Autrement dit, \textbf{la racine carrée d'un nombre négatif n'est pas un nombre réel}.
+\end{prop}
+
+\begin{defn}[Fonction racine carrée]
+La fonction racine carrée est la fonction définie sur $[0 ; \infty[$ par :
+\[ \begin{array}{c c c}
+[0 ; \infty[ & \to & \R \\
+x & \mapsto & \sqrt{x} 
+\end{array} \]
+\end{defn}
+
+\begin{rmq}
+Notons $y=\sqrt{x}$. Le graphe de la fonction racine carrée est l'ensemble :
+\[ \{ (x ; y) \tq x \in [0 ; \infty[ \} . \]
+Or $y=\sqrt{x}$ implique que $y^2 = x$ donc, l'ensemble 
+\[ \{ (y ; x=y^2) \tq y \in [0 ; \infty[ \} , \]
+correspond au graphe de la fonction carré. Autrement dit, la graphe de la fonction racine carrée sur $[0 ; \infty[$ 
+correspond à celui de la fonction carré lorsqu'on échange l'axe des abscisses avec celui des ordonnées.
+
+\begin{multicols}{2}
+
+\begin{tikzpicture}[>=stealth, scale=1]
+\begin{axis}%
+    [
+        grid=major,  
+        x=5mm,
+        y=5mm,
+        xtick={0,1,...,10},   
+        xmin=-0.5,
+        xmax=10,
+        xlabel={\scriptsize $x$},
+        axis x line=middle,
+        ytick={0,...,9},
+        tick label style={font=\tiny},
+        ymin=-0.5,
+        ymax=9,
+        ylabel={\scriptsize $y$},
+        axis y line=middle,
+        no markers,
+        samples=100,
+        domain=0:10,
+        restrict y to domain=-20:20
+    ]
+    \addplot[thick,samples=400] (x,{x^(1/2)});
+\end{axis} 
+\end{tikzpicture}
+
+\begin{tikzpicture}[>=stealth, scale=1]
+\begin{axis}%
+    [
+        grid=major,  
+        x=5mm,
+        y=5mm,
+        xtick={0,1,...,10},   
+        xmin=-0.5,
+        xmax=9,
+        xlabel={\scriptsize $y$},
+        axis x line=middle,
+        ytick={0,...,10},
+        tick label style={font=\tiny},
+        ymin=-0.5,
+        ymax=10,
+        ylabel={\scriptsize $y^2=x$},
+        axis y line=middle,
+        no markers,
+        samples=100,
+        domain=0:10,
+        restrict y to domain=-20:20
+    ]
+    \addplot[thick,samples=400] (x,{x^2});
+\end{axis} 
+\end{tikzpicture}
+
+\end{multicols}
+\end{rmq}
+
+\begin{thm}[Propriétés algébriques]
+	Soient $a, b \in\R$ deux réels, on a :
+		\begin{enumerate}[label=(\roman*)]
+			\item $\sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}$ ;
+			\item si $b \neq 0, \sqrt{\dfrac{a}{b}} = \dfrac{\sqrt{a}}{\sqrt{b}}$ .
+		\end{enumerate}
+\end{thm}
+
+\section{Fonction valeur absolue}
+
+\begin{defn}[Valeur absolue]
+Soit $x$ un nombre réel, on appelle valeur absolue de $x$, et on note $\abs{x}$ le réel positif défini par :
+\[ \abs{x} = \left \{ \begin{array}{c c c} 
+			x & \text{ si } & x \geq 0 \\ 
+			-x & \text{ si } & x < 0 
+			\end{array} \right. \]
+\end{defn}
+
+\begin{ex}
+Soit $x = -4, x^2 = 16$ et $\sqrt{x^2} = 4$ donc $\abs{-4} = 4$.
+\end{ex}
+
+\begin{defn}[Fonction valeur absolue]
+La fonction valeur absolue est la fonction définie sur $\R$ par :
+\[ \begin{array}{c c c}
+\R & \to & \R \\
+x & \mapsto & \abs{x} 
+\end{array} \]
+\end{defn}
+
+\begin{prop}[Positivité]
+La fonction valeur absolue est positive (par construction), on a, pour tout $x \in \R, \abs{x} \geq 0$.
+\end{prop}
+
+\begin{ex}
+$\abs{-7} = 7, \abs*{\frac45} = \frac45, \abs*{-\frac13} = \frac13$, etc... \newline
+La fonction valeur absolue \og ignore \fg simplement le signe.
+\end{ex}
+
+\begin{coro}[Symétrie]
+Pour tout $x \in \R$, on a $\abs{x} = \abs{-x}$.
+\end{coro}
+
+\begin{thm}[Propriétés algébriques]
+Pour tous $x, y \in \R$, on a :
+\begin{enumerate}[label=(\roman*)]
+\item $\abs{x \cdot y} = \abs{x} \cdot \abs{y}$ ;
+\item si $y \neq 0, \abs*{\dfrac{x}{y}} = \dfrac{\abs{x}}{\abs{y}}$.
+\end{enumerate}
+\end{thm}
+
+\begin{thm}[Distance entre réels]
+Soient deux nombres réels $x$ et $y$, alors, leur distance sur la droite réelle est donnée par :
+\[ \text{distance}(x,y) = \abs{x-y} = \abs{y-x} \]
+\end{thm}
+
+\begin{rmq}
+En particulier, pour un réel $x$, la valeur $\abs{x}$ représente la distance de $x$ à 0.
+\end{rmq}
+
+\begin{prop}[Inégalité et valeur absolue]
+Soit $x \in \R$ et $a$ un réel positif ou nul, on a les équivalences suivantes :
+\begin{align*} 
+\abs{x} = a & \iff & x = a \text{ ou } x=-a \\
+\abs{x} \leq a & \iff & x \in [-a ; a ] \\
+\abs{x} < a & \iff & x \in ]-a ; a [ 
+\end{align*}
+\end{prop}
+
+\begin{proof}
+La première équivalence est évidente par symétrie de la valeur absolue.  \newline
+La deuxième équivalence s'obtient en considérant $\abs{x}$ comme la distance de $x$ à 0, 
+si cette distance est inférieure ou égale à $a$, on a bien $x \in [a ; a]$. \newline
+La troisième équivalence se démontre de la même façon.
+\end{proof}
+
+\begin{coro}
+Soient $c, r \in \R$ avec $r \geq 0$, on a :
+\[ \{ x \in \R \tq \abs{x-c} \leq r \} = [c-r ; c+r ] . \]
+et 
+\[ \{ x \in \R \tq \abs{x-c} \geq r \} = ]-\infty ; c-r ] \cup [ c+r ; \infty [ . \]
+A noter que dans le cas d'inégalités srictes, les intervalles sont ouverts au niveau des bornes finies ($c-r$ et $c+r$).
+\end{coro}
+
+\begin{proof}
+Il s'agit du même raisonnement, les points $x$ tels que $\abs{x-c} \leq r$ sont ceux à une distance au plus $r$ du point $c$. 
+Dans le second cas, les points $x$ tels que $\abs{x-c} \geq r$ sont ceux à une distance au moins $r$ du point $c$. 
+\end{proof}
+
+\begin{prop}[Milieu d'un intervalle]
+Soient $a, b \in \R$ avec $a \leq b$. Le milieu de l'intervalle $[a ; b]$ est égal à :
+\[ \dfrac{a+b}2. \] 
+\end{prop}
+
+\begin{proof}
+Notons $x$ le milieu de $[a ; b]$, comme $x$ est équidistant de $a$ et $b$ on a :
+\[ \abs{x-a} = \abs{x-b} \]
+Comme $x \geq a$, on a $\abs{x - a} = x-a $. \newline
+De même, comme $x \leq b$, $\abs{x-b} = b - x$. \newline
+Finalement, on résout :
+\begin{align*}
+x-a = b-x & \iff 2x = a + b \\
+& \iff x = \dfrac{a+b}2.
+\end{align*}
+
+\end{proof}
+
+\chapter{Arithmétique}
+
+\section{Parité}
+
+\begin{nota}
+Pour noter la multiplication entre deux valeurs numériques, on note $2\times3$.
+Si une lettre rentre en jeu, on notera la multiplication par un point médian ($2\cdot b$) ou simplement rien ($2b$).
+\end{nota}
+
+\begin{defn}[Nombre pair]
+Soit $n\in\Z$ un nombre entier.
+	
+On dit que $n$ est \textbf{pair} si $n$ est un multiple de 2.
+Sinon, on dit que $n$ est \textbf{impair}.
+\end{defn}
+
+\begin{rmq}
+Les nombres pairs sont tous les nombres de la forme $n = 2k$ avec $k \in \Z$. 
+\end{rmq}
+
+\begin{thm}[Nombres impairs]
+Les nombres impairs sont tous les nombres de la forme $n = 2k + 1$ avec $k \in \Z$. 
+\end{thm}
+
+\begin{proof}
+Par construction des entiers, il existe exactement un seul entier entre chaque entier de la forme $m = 2k$ avec $k \in \Z$. 
+Pour $k \in \Z$ donné, ce nombre sera de la forme $n = 2k +1$, et comme tous les nombres de la forme $m = 2k$ sont pairs,
+ce nombre sera nécessairement impair. 
+\end{proof}
+
+\begin{thm}[Parité et somme]
+	Soient $m, n\in\Z$ deux entiers.
+		\begin{enumerate}
+			\item Si $m$ et $n$ sont pairs, alors $m+n$ est également pair.
+			\item Si $m$ est pair et $n$ est impair, alors $m+n$ est impair.
+			\item Si $m$ et $n$ sont impairs, alors $m+n$ est pair.
+		\end{enumerate}
+\end{thm}
+
+\begin{thm}[Parité et produit]
+Soient $m, n\in\Z$ deux entiers, $m \cdot n$ est pair si, et seulement si, $m$ ou $n$ est pair.
+\end{thm}
+
+\begin{coro}
+Soit $n \in \Z$ un nombre entier, $n^2$ est pair si, et seulement si, $n$ est pair.
+\end{coro}
+
+\section{Diviseurs}
+
+\begin{defn}
+	Soient $a, n \in \N$ deux entiers naturels.
+	
+	On dit que « $a$ divise $n$ » ou que « $n$ est un multiple de $a$ » dès que
+		\[ n = a \cdot k, \]
+	où $k\in\N$ est un entier naturel.
+\end{defn}
+
+\begin{nota}
+	On note $a \big| n$ la relation « $a$ divise $n$ ».
+\end{nota}
+
+\begin{prop}[Stabilité de la divisibilité]
+\label{prop:stab}
+	Considérons $n$ divisible par $a$. Alors
+		\[ \bigl( m \text{ divisible par $a$} \bigr) \iff \bigl( m+n \text{ divisible par $a$} \bigr). \]
+	
+	En d'autres termes, ajouter un multiple de $a$ à un nombre ne change pas sa divisibilité par $a$ (ou sa non divisibilité par $a$).
+\end{prop}
+
+\begin{proof}
+On peut écrire $m=a \cdot k_1$ et $n = a \cdot k_2$ donc $m+n = a \cdot (k_1 + k_2)$. 
+\end{proof}
+
+\begin{coro}
+Soient $a, n \in \N$ deux entiers naturels ; $a$ divise $n$ si, et seulement si, $a$ divise $-n$.
+\end{coro}
+
+\begin{thm}[Critères de divisibilité]
+Soit $n \in \Z$ un nombre entier.
+
+\begin{enumerate}[label=(\roman*)]
+\item $n$ est divisible par 2 si son chiffre des unités est pair ;
+\item $n$ est divisible par 3 si la somme de ses chiffres est divisible par 3 ;
+\item $n$ est divisible par 5 si son chiffre des unités est 0 ou 5 ;
+\item $n$ est divisible par 9 si la somme de ses chiffres est divisible par 9 ;
+\end{enumerate}
+\end{thm}
+
+\begin{ex}
+756 est divisible par 9 car $7+5+6=18$ et $1+8=9$ (on notera qu'on a appliqué deux fois la règle de divisibilité par 9).
+\end{ex}
+
+\section{Nombres premiers}
+
+\begin{defn}[Nombres premiers]
+	Soit $p \in\N$, un nombre entier. On dit que $p$ est premier s'il admet \textbf{exactement} deux diviseurs entiers positifs,
+	à savoir 1 et lui-même.
+\end{defn}
+
+\begin{thm}[Décomposition en facteurs premiers]
+Soit $n \in \N, n \geq 2$, on peut décomposer $n$ en un produit de nombres premiers. 
+\end{thm}
+
+\begin{proof}
+Considérons l'algorithme suivant :
+
+\begin{algo}
+On entre $n$
+\begin{itemize}
+\item si $n$ premier, l'algorithme renvoit $n$.
+\item sinon, $n$ admet un diviseur autre que lui même, on peut donc écrire $n = p \cdot q$, avec $1 < p < n$ et $1 < q < n$ ;
+l'algorithme renvoit $p$ et $q$.
+\end{itemize}
+\end{algo}
+
+On prend donc $n \geq 2$ et on le rentre dans l'algorithme. \\
+Si on reçoit $n$, c'est terminé. Sinon, on reçoit $p$ et $q$.
+On applique donc l'algorithme à $p$ et $q$ et ainsi de suite. 
+On s'arrête dès lors que les sorties de l'algorithme sont identiques aux entrées.
+\end{proof}
+
+\begin{thm}[Infinité des nombres premiers]
+Il existe une infinité de nombres premiers.
+\end{thm}
+
+\begin{proof}
+Supposons qu'il n'existe qu'un nombre fini de nombres premiers que l'on range dans l'ordre croissant et que l'on note
+ $p_1, p_2, \dots, p_k$. 
+Considérons le nombre $n = p_1 \cdot p_2 \cdot \dots \cdot p_k + 1$. Ce nombre est plus grand que $p_k$, il n'est donc pas premier.
+Comme il admet une décomposition en facteurs premiers, il existe un nombre premier $p_i$ avec $1 \leq i \leq k$ 
+qui divise $n$. Or, $p_i$ divise aussi $n-1 = p_1 \cdot p_2 \cdot \dots \cdot p_k$, donc, d'après la propriété de stabilité,
+$p_i$ divise 1 ce qui est absurde.
+\end{proof}
+
+\begin{thm}[Théorème fondamental de l'arithmétique]
+	La décomposition en facteurs premiers d'un nombre entier est unique (à l'ordre des facteurs premiers près).
+\end{thm}
+
+\chapter{Vecteurs}
+
+Dans tout ce chapite, on se place dans le plan, éventuellement muni d'un repère.
+
+\section{Définition et premiers théorèmes}
+
+\begin{defn}[Vecteur]
+Soient $A$ et $B$ deux points du plan. Le vecteur $\vec{AB}$ est l'objet mathématique qui représente la translation allant du point 
+$A$ au point $B$. Le vecteur $\vec{AB}$ est défini par :
+\begin{enumerate}[label=(\roman*)]
+\item sa direction : celle de la droite $(AB)$, ou de toute droite parallèle à $(AB)$ ;
+\item son sens : de $A$ vers $B$ ;
+\item sa norme : c'est la longueur du segment $[AB]$.
+\end{enumerate}
+\end{defn}
+
+\begin{nota}
+Pour un vecteur $\vec{AB}$, on note $\norm{\vec{AB}}$ sa norme.
+\end{nota}
+
+\begin{rmq}
+$A$ est appelé \og l'origine \fg{} du vecteur $\vec{AB}$ et $B$ son \og extrêmité \fg.
+\end{rmq}
+
+\begin{defn}[Vecteurs égaux]
+Deux vecteurs ayant même direction, même sens et même norme sont égaux.
+Lorsque des vecteurs sont égaux, on dit qu'ils sont des représentant d'un même vecteur, que l'on peut également noter avec une 
+seule lettre $\vec{u}$, indépendamment des deux points d'origine et d'extréminité.
+\end{defn}
+
+\begin{thm}[Caractérisation de l'égalité]
+Un quaddrilatère $ABDC$ est un parallélogramme (éventuellement aplati) si, et seulement si, $\vec{AB} = \vec{DC}$
+\end{thm}
+
+\begin{proof}
+$\vec{AB} = \vec{DC}$ si, et seulement si, ces deux vecteurs ont la même direction, même sens et même norme. Ce qui est bien 
+équivalent au fait que $ABCD$ est un parallélogramme (faire un dessin).
+\end{proof}
+
+\begin{thm}[Caractérisation du milieu]
+$I$ est le milieu du segment $[AB]$ si, et seulement si, $\vec{AI} = \vec{IB}$.
+\end{thm}
+
+\section{Somme de deux vecteurs, produit par un réel}
+
+\begin{defn}[Vecteur somme]
+Soient $\vec{u}$ et $\vec{v}$ deux vecteurs quelconques. La somme $\vec{u} + \vec{v}$ est le vecteur associé à la translation obtenue
+par la translation de vecteur $\vec{u}$ suivie de la translation de vecteur $\vec{v}$.
+\end{defn}
+
+\begin{defn}[Vecteur opposé]
+Soit $\vec{u}$ un vecteur quelconue, le vecteur opposé du vecteur $\vec{u}$, noté $–\vec{u}$, est le vecteur qui possède la même
+direction et la même norme que $\vec{u}$ mais un sens opposé. \\
+En particulier, pour $A, B$ deux points du plan, on a $-\vec{AB} = \vec{BA}$.
+\end{defn}
+
+\begin{defn}[Vecteur nul]
+On note $\vec{0}$ le vecteur nul : c'est le vecteur qui correspond à une translation laissant invariant les points du plan.
+De plus, pour tout point $A$ du plan, le vecteur $\vec{AA}$ est égal au vecteur nul.
+\end{defn}
+
+\begin{prop}
+Soient $\vec{u}, \vec{v}$ et $\vec{w}$ trois vecteurs, on a :
+\begin{enumerate}
+\item $\vec{u} + \vec{v} = \vec{v} + \vec{u}$, la somme de deux vecteurs est commutative ;
+\item $(\vec{u} + \vec{v}) + \vec{w} = \vec{v} + (\vec{u} + \vec{w}) =  \vec{v} + \vec{u} + \vec{w}$, la somme est associative ;
+\item $\vec{u} + (-\vec{u}) = \vec{0}$, la somme d'un vecteur et de son opposé est le vecteur nul ;
+\item $\vec{u} + \vec{0} = \vec{u}$, le vecteur nul est neutre pour la somme.
+\end{enumerate}
+\end{prop}
+
+\begin{thm}[Relation de Chasles]
+Soient $A$, $B$ et $C$ trois points. L’enchaînement de la translation de vecteur $\vec{AB}$ puis de la translation de vecteur $\vec{BC}$
+est la translation de vecteur $\vec{AC}$ et on a : 
+\[ \vec{AB} + \vec{BC} = \vec{AC} . \]
+\end{thm}
+
+\section{Produit d'un vecteur par un nombre réel}
+
+\begin{defn}[Produit d'un vecteur par un nombre réel]
+Soit $\vec{u}$ un vecteur et $k$ un nombre réel non nul, alors le vecteur $k \vec{u}$ résultant de la multiplication de $\vec{u}$ par k, est défini par :
+\begin{enumerate}[label=(\roman*)]
+\item sa direction : la même que celle de $\vec{u}$ ;
+\item son sens : celui de $\vec{u}$ si k > 0, l’opposé de celui de $\vec{u}$ si k < 0 ;
+\item sa norme : $\norm{k \vec{u}} = \abs{k} \norm{\vec{u}}$.
+\end{enumerate}
+\end{defn}
+
+\begin{prop}[Distributivité et associativité du produit]
+Soient $\vec{u}, \vec{v}$ deux vecteurs et $k, k'$ deux nombres réels, on a :
+\begin{enumerate}[label=(\roman*)]
+\item $k(\vec{u} + \vec{v}) = k\vec{u} + k\vec{v}$ ;
+\item $(k+k')\vec{u} = k\vec{u} + k'\vec{u}$ ;
+\item $k(k' \vec{u}) = (kk' )\vec{u} = kk' \vec{u}$
+\end{enumerate}
+\end{prop}
+
+\section{Approche analytique}
+
+On suppose le plan muni d'un repère orthonormé, c'est-à-dire d'un triplet de points $(O, I, J)$.
+
+\begin{defn}[Base orthonormée]
+Soient $\vec{i}$ et $\vec{j}$ deux vecteurs non colinéaires du plan dont les directions sont perpendiculaires et tels que
+$\norm{\vec{i}} = \norm{\vec{j}} = 1$. Le couple $(\vec{i}, \vec{j})$ est appelé base orthonormée des vecteurs du plan.
+\end{defn}
+
+\begin{defn}[Repère orthonormé]
+On appelle repère orthonormé du plan le triplet $(O, \vec{i}, \vec{j})$ constitué par un point $O$ du plan appelé
+origine et par les vecteurs d’une base orthonormée $(\vec{i}, \vec{j})$.
+\end{defn}
+
+\begin{rmq}
+On peut définir de façon équivalente un repère à partir d'un triplet de points $(O, I, J)$ ou à partir d'un point $O$ et d'un couple
+de vecteurs $(\vec{i}, \vec{j})$. On passe de l'un à l'autre en posant $\vec{OI} = \vec{i}$ et $\vec{OJ} = \vec{j}$.
+\end{rmq}
+
+\begin{prop}[Coordonnées d'un vecteur]
+Tout vecteur du plan $\vec{u}$ se décompose de manière unique sous la forme :
+\[ \vec{u} = x \vec{i} + y \vec{j} , \]
+avec $x$ et $y$ des noombres réels. Le couple $\left ( \begin{array}{c} x \\ y \end{array} \right ) $ est le couple des coordonnées de 
+$\vec{u}$ dans la base orthonormée $(\vec{i}, \vec{j})$.
+\end{prop}
+
+\begin{prop}[Coordonnées du vecteur $\vec{AB}$]
+Soit $A(x_A ; y_A)$ et $B(_xB ; y_B)$ dans le plan muni d’un repère orthonormé $(O, \vec{i}, \vec{j})$.
+Les coordonnées du vecteur $\vec{AB}$ sont $\pvec{x_B-x_A}{y_B-y_A}$.
+\end{prop}
+
+\begin{prop}[Egalité de vecteurs]
+Dans une base orthonormée $(\vec{i}, \vec{j})$, deux vecteurs $\vec{u} \left ( \begin{array}{c} x \\ y \end{array} \right )$ et 
+$\vec{v} \left ( \begin{array}{c} x' \\ y' \end{array} \right )$ sont égaux si, et seulement si ils ont les mêmes coordonnées.
+\[ \vec{u} = \vec{v} \iff \left \{ \begin{array}{c c c} x & = & x' \\ y & = & y' \end{array} \right. \]
+\end{prop}
+
+\begin{prop}[Somme de deux vecteurs]
+Dans une base orthonormée $(\vec{i}, \vec{j})$, la somme de deux vecteurs :
+\[ \vec{u} \pvec{x}{y} \et \vec{v} \pvec{x'}{y'} \]
+est donnée par :
+\[ \vec{u} + \vec{v} \pvec{x+x'}{y+y'} . \]
+Autrement dit, les coordonnées du vecteur somme sont la somme des coordonnées.
+De même :
+\[ -\vec{u} \pvec{-x}{-y} \et \vec{u} - \vec{v} = \pvec{x-x'}{y-y'} . \]
+\end{prop}
+
+\begin{prop}[Multiplication par un réel]
+Dans une base orthonormée $(\vec{i}, \vec{j})$ si on multiplie un vecteur $\vec{u}\pvec{x}{y}$
+par un nombre réel $k$, alors ses coordonnées sont multipliées par $k$.
+\[ k \vec{u} \pvec{kx}{ky} . \] 
+\end{prop}
+
+\begin{prop}[Norme d'un vecteur]
+Dans une base orthonormée $(\vec{i}, \vec{j})$, la norme d'un $\vec{u}\pvec{x}{y}$ est :
+\[ \norm{\vec{u}} = \sqrt{x^2+y^2} . \]
+\end{prop}
+
+\begin{rmq}
+On retrouve la formule de la norme d'un segment vue au chapitre 2.
+\end{rmq}
+
+\section{Colinéarité}
+
+\begin{defn}[Colinéarité]
+Soit $\vec{u}$ et v deux vecteurs non nuls. 
+S’il existe un nombre réel non nul $k$ tel que \vec{v} = k \vec{u$}, on dit que u et v sont colinéaires. 
+$k$ est appelé coefficient de colinéarité.
+De manière analogue, on considère que le vecteur nul $\vec{0}$ est colinéaire à tout vecteur puisque $\vec{0} = 0\vec{u}$.
+\end{defn}
+
+\begin{rmq}
+Deux vecteurs sont colinéaires si, et seulement si, ils ont la même direction.
+\end{rmq}
+
+\begin{defn}[Déterminant de deux vecteurs]
+Dans une base orthonormée $(\vec{i}, \vec{j})$, le déterminant des vecteurs $\vec{u}  \pvec{x}{y}$
+et $\vec{v} \pvec{x'}{y'}$ est le nombre $\det(u,v) = xy' - x'y$.
+\end{defn}
+
+\begin{prop}[Condition de colinéarité]
+Deux vecteurs $\vec{u}, \vec{v}$ sont colinéaires si, et seulement si $det(u,v) = 0$.
+\end{prop}
+
+\begin{proof}
+Soient $\vec{u}  \pvec{x}{y}$ et $\vec{v} \pvec{x'}{y'}$ deux vecteurs non nuls. S'ils sont colinéaires, alors il existe $k \in \R$ tel que
+$\vec{v} = k \vec{u}$ et le calcul du déterminant donne $\det(u,v) = k xy - k xy = 0$. \\
+Réciproquement, si $\det(u,v)=0$, comme $\vec{u}$ est non nul au moins une de ses coordonnées est non nul, 
+supposons que $x \neq 0$. On pose $k = \dfrac{x'}{x}$, on a donc :
+\[ \det(u,v) = xy' - kxy = 0 \iff y' = ky \]
+soit $\vec{v} = k \vec{u}$.
+\end{proof}
+
+\begin{coro}[Parallélisme de deux droites]
+Deux droites $(AB)$ et $(MN)$ sont parallèles si et seulement si le déterminant des vecteurs $\vec{AB}$ et $\vec{MN}$ est nul.
+\end{coro}
+
+\begin{proof}
+Deux droites sont parallèles si, et seulement si, leurs vecteurs directeurs sont colinéaires.
+\end{proof}
+
+\begin{coro}[Alignement de trois points]
+Trois points distincts $A, B$ et $C$ sont alignés si et seulement si le déterminant des vecteurs $\vec{AB}$ et $\vec{AC}$ est nul.
+\end{coro}
+
+\begin{proof}
+Le parallélisme des droites $(AB)$ et $(AC)$ est équivalent à l'alignement des points $A, B$ et $C$ (faites un dessin !).
+\end{proof}
 
 \end{document}

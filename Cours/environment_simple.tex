@@ -5,13 +5,19 @@
 \newtheorem*{nota}{Notation}
 
 \theoremstyle{definition}
+\newtheorem*{algo}{Algorithme}
+
+\theoremstyle{definition}
+\newtheorem*{ax}{Axiome}
+
+\theoremstyle{definition}
 \newtheorem*{nomen}{Nomenclature}
 
 \theoremstyle{definition}
 \newtheorem{ex}{Exemple}[section]
 
 \theoremstyle{remark}
-\newtheorem{rmq}{Remarque}
+\newtheorem{rmq}{Remarque}[chapter]
 
 %styles pour théorèmes
 \newkeytheoremstyle{tcb-thm}
@@ -124,6 +130,22 @@
 	innertopmargin=-4pt,
 	nobreak=false,
 ]{nota}
+
+\surroundwithmdframed[
+	hidealllines=false,
+	innerleftmargin=10pt,
+	innerrightmargin=10pt,
+	innertopmargin=-4pt,
+	nobreak=false,
+]{algo}
+
+\surroundwithmdframed[
+	hidealllines=false,
+	innerleftmargin=10pt,
+	innerrightmargin=10pt,
+	innertopmargin=-4pt,
+	nobreak=false,
+]{nomen}
 
 
 %interface pour les exos
