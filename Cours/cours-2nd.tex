@@ -1456,7 +1456,7 @@ seule lettre $\vec{u}$, indépendamment des deux points d'origine et d'extrémin
 \end{defn}
 
 \begin{thm}[Caractérisation de l'égalité]
-Un quaddrilatère $ABDC$ est un parallélogramme (éventuellement aplati) si, et seulement si, $\vec{AB} = \vec{DC}$
+Un quadrilatère $ABDC$ est un parallélogramme (éventuellement aplati) si, et seulement si, $\vec{AB} = \vec{DC}$
 \end{thm}
 
 \begin{proof}
@@ -1587,8 +1587,8 @@ On retrouve la formule de la norme d'un segment vue au chapitre 2.
 \section{Colinéarité}
 
 \begin{defn}[Colinéarité]
-Soit $\vec{u}$ et v deux vecteurs non nuls. 
-S’il existe un nombre réel non nul $k$ tel que \vec{v} = k \vec{u$}, on dit que u et v sont colinéaires. 
+Soit $\vec{u}$ et v deux vecteurs non nuls.
+S’il existe un nombre réel non nul $k$ tel que $\vec{v} = k \vec{u}$, on dit que u et v sont colinéaires. 
 $k$ est appelé coefficient de colinéarité.
 De manière analogue, on considère que le vecteur nul $\vec{0}$ est colinéaire à tout vecteur puisque $\vec{0} = 0\vec{u}$.
 \end{defn}
@@ -1598,7 +1598,7 @@ Deux vecteurs sont colinéaires si, et seulement si, ils ont la même direction.
 \end{rmq}
 
 \begin{defn}[Déterminant de deux vecteurs]
-Dans une base orthonormée $(\vec{i}, \vec{j})$, le déterminant des vecteurs $\vec{u}  \pvec{x}{y}$
+Dans une base $(\vec{i}, \vec{j})$, le déterminant des vecteurs $\vec{u}  \pvec{x}{y}$
 et $\vec{v} \pvec{x'}{y'}$ est le nombre $\det(u,v) = xy' - x'y$.
 \end{defn}
 
@@ -1630,5 +1630,897 @@ Trois points distincts $A, B$ et $C$ sont alignés si et seulement si le déterm
 \begin{proof}
 Le parallélisme des droites $(AB)$ et $(AC)$ est équivalent à l'alignement des points $A, B$ et $C$ (faites un dessin !).
 \end{proof}
+
+% Par manque de temps (de motivation ???) j'ai volé entièrement ce chapitre au GOAT : https://github.com/Mattuuuuh
+\chapter{Probabilités}
+
+Le but de ce chapitre est d'étudier la notion de loi de probabilité sur un ensemble d'issues.
+Une loi de probabilité est une hypothèse de départ choisie pour modéliser la réalité.
+Celle-ci ne se démontre pas et peut naître soit d'hypothèses théoriques, soit à partir de fréquences observées après un grand nombre d'expériences.
+Cette deuxième méthode s'appuie sur le fait que la fréquence d'un événement s'approche de sa probabilité lorsque le nombre d'expériences augmente.
+On appelle ce résultat la \textbf{loi des grands nombres}, objet du chapitre sur l'échantillonage.
+
+\section{Introduction}
+
+\subsection{Expérience, univers, événement}
+
+\begin{defn}[expérience aléatoire]
+	Une \textbf{expérience aléatoire} est une expérience renouvelable dont on connait les \textbf{issues} (résulats possibles) sans qu'on puisse savoir avec certitude laquelle sera réalisée.
+\end{defn}
+
+On introduit ici le concept d'univers et d'événement à l'aide d'ensembles finis.
+
+\begin{defn}[univers]
+	L'\textbf{univers} $\Omega$ d'une expérience aléatoire est l'\textbf{ensemble} des issues.
+\end{defn}
+
+\begin{defn}[évènement]
+	Un \textbf{événement} est un sous-ensemble de l'univers.
+	On peut le décrire avec un ensemble ou des mots, par abus de notation.
+\end{defn}
+
+\subsection{Événement complémentaire}
+
+\begin{defn}[évènement complémentaire]
+	Soit $E \subseteq \Omega$ un événement.
+	On pose $\overline{E}$ l'\textbf{événement complémentaire} à $E$ dans $\Omega$ : c'est l'ensemble des issues de $\Omega$ qui n'appartiennent pas à $E$.
+	Autrement dit,
+		\begin{align*}
+			E \cap \overline{E} = \emptyset && \text{et} && E \cup \overline{E} = \Omega.
+		\end{align*}
+\end{defn}
+
+\begin{nota}
+	On note aussi le complémentaire d'un événement $E$ des façons suivantes.
+		\[ \overline{E} = E^c = \Omega \setminus E = \Omega - E. \]
+\end{nota}
+
+\subsection{Union, intersection : diagrammes de Venn}
+
+\begin{defn}[intersection, union]
+	Pour deux ensembles $A, B$ on définit les ensembles suivants.
+		\begin{enumerate}
+			\item $A \cap B$ : l'\textbf{intersection} des deux ensembles.
+			
+			Un élément appartient à $A· \cap B$ dès qu'il appartient à $A$ \textbf{et} à $B$.
+			\item $A \cup B$ : l'\textbf{union} des deux ensembles.
+			
+			Un élément appartient à $A \cup B$ dès qu'il appartient à $A$ \textbf{ou} à $B$.
+		\end{enumerate}
+\end{defn}
+
+\begin{center}
+\includegraphics[page=1, scale=1.3]{figures/fig-proba.pdf}
+\hfill
+\includegraphics[page=2, scale=1.3]{figures/fig-proba.pdf}
+\end{center}
+
+\section{Lois de probabilité}
+
+Lorsqu'on considère une expérience aléatoire, on associe une probabilité à chaque issue possible (c'est-à-dire chaque élément de l'univers).
+Cette association est une loi de probabilité qu'on ne démontre jamais : c'est la base de la modélisation du hasard.
+
+\begin{defn}[loi de probabilité]
+	Soit $\Omega = \{ \omega_1, \omega_2, \omega_3, \dots \}$ un univers fini.
+	Une \textbf{loi de probabilité} $P$ est une fonction associant à chaque issue $\omega$ une valeur de $[0;1]$ (sa probabilité d'être réalisée).
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|} \hline
+		Issue		& $\omega_1$ & $\omega_2$ & \hspace{15pt} \dots \hspace{15pt} \\ \hline
+		Probabilité	& $P(\omega_1)$ & $P(\omega_2)$ &\hspace{15pt} \dots \hspace{15pt} \\ \hline
+	\end{tabular}
+	\end{center}
+	La loi $P$ s'étend à tout sous-ensemble $E = \{e_1, e_2, \dots \}$ de l'univers $\Omega$ par additivité : la probabilité de l'événement $E$ est la somme de la probabilité de chacun de ses éléments.
+			\[ P(E) = P(e_1) + P(e_2) + \dots \]
+	En outre, la probabilité de l'univers tout entier est $1$ :
+		\[ P(\Omega) = P(\omega_1) + P(\omega_2) + \dots  = 1, \]
+	et la probabilité de l'ensemble vide $\emptyset$ est nulle :
+		\[ P(\emptyset) = 0. \]
+\end{defn}
+
+\begin{nota}
+	En écrivant $P(\omega)$, on abuse légèrement d'une notation. Il faudrait plutôt écrire
+		\[ P\bigl(\{\omega\}\bigr), \]
+	car la fonction $P$ prend uniquement des sous-ensembles de $\Omega$.
+\end{nota}
+
+\begin{defn}[équiprobabilité]
+	On parle de situation \textbf{équiprobable} si chaque issue $\omega$ de l'univers $\Omega$ admet la même probabilité.
+		\[ P(\omega_1) = P(\omega_2) =  P(\omega_3) = \dots, \]
+	La loi qui en découle s'appelle la \textbf{loi uniforme}.
+\end{defn}
+
+\begin{coro}
+	En situation d'équiprobabilité, chaque issue $\omega$ a pour probabilité
+		\[ P(\omega) = \frac{1}{\text{Nombre d'issues possibles}} = \frac{1}{|\Omega|}. \]
+	De plus, chaque événement $E \subseteq \Omega$ a pour probabilité
+		\[ P(E) = \frac{|E|}{|\Omega|}. \]
+\end{coro}
+%\pf{Démonstration du corollaire \ref{cor:equiprob}}{
+\begin{proof}
+	Comme la probabilité de l'univers $P(\Omega)$ vaut $1$, on en déduit que
+		\[ P(\Omega) = P(\omega_1) + P(\omega_2) + \dots  = 1. \]
+	Chaque probabilité est la même ; notons la $p$. La somme a exactement $|\Omega|$ termes, donc
+		\begin{gather*}
+			|\Omega| \cdot p = 1, \\
+			p = \frac{1}{|\Omega|}. 
+		\end{gather*}
+	Pour un événement $E = \{e_1, e_2, \dots \} \subseteq \Omega$, on a par définition que la probabilité de l'événement $E$ est la somme de la probabilité de chacun de ses éléments.
+		\begin{align*}
+			P(E) &= P(e_1) + P(e_2) + \dots \\
+				&= \frac{1}{|\Omega|} + \frac{1}{|\Omega|} + \dots + \frac{1}{|\Omega|} \\
+				&= \frac{|E|}{|\Omega|}.
+		\end{align*}
+\end{proof}
+
+\begin{thm}[inclusion-exclusion]
+\label{thm:incl-excl}
+	Soient $A, B \subseteq \Omega$ deux événements.
+	Alors
+		\[ P(A \cup B) = P(A) + P(B) - P(A\cap B). \]
+\end{thm}
+
+%\pf{Preuve du théorème \ref{thm:incl-excl}}{
+\begin{proof}
+	Considérons le diagramme de Venn suivant où on colorie $A$ et $B$ l'un après l'autre de la même couleur.
+	En passant deux fois sur l'intersection, sa couleur devient plus sombre.
+	\begin{center}
+	\includegraphics[page=3, scale=1.5]{figures/fig-proba.pdf}
+	\end{center}
+	Lorsqu'on calcule $P(A) + P(B)$, remarquons donc qu'on compte deux fois tous les éléments appartenant à la fois à $A$ et à $B$, c'est-à-dire les éléments de $A \cap B$.
+	En les retirant une fois, chaque élément de l'union $A\cup B$ est compté une seule fois et on obtient bien
+		\[ P(A \cup B) = P(A) + P(B) - P(A\cap B). \]
+\end{proof}
+
+\begin{defn}[évènements disjoints]
+	Deux événements $A, B \subseteq \Omega$ sont dits \textbf{événements disjoints} dès que
+		\[ A \cap B = \emptyset, \]
+	l'ensemble vide.
+	On a dans ce cas et d'après le théorème $\ref{thm:incl-excl}$,
+		\[ P(A \cup B) = P(A) + P(B). \]
+\end{defn}
+
+\begin{coro}
+	Soient $E \subseteq \Omega$ un événement et $\overline{E}$ son complémentaire.
+	Alors
+		\[ P\bigl( \overline{E} \bigr) = 1 - P(E). \]
+\end{coro}
+
+\begin{proof}
+	En utilisant les propriétés de $P$, du complémentaire, et le principe d'inclusion-exclusion, on trouve
+		\begin{align*}
+		 1 = P(\Omega) &= P\bigl( E \cup \overline{E} \bigr), \\
+		 				&= P(E) + P\bigl(\overline{E}\bigr) - P\bigl( E \cap \overline{E}\bigr), \\
+		 				&= P(E) + P\bigl(\overline{E}\bigr) - P( \emptyset), \\
+		 				&= P(E) + P\bigl(\overline{E}\bigr),
+		\end{align*}
+	ce qui conclut.
+\end{proof}
+
+
+\section{Arbres de probabilité}
+
+Les arbres de probabilité sont des schémas permettant de décrire les chemins possibles d'une expérience aléatoire à plusieurs épreuves (ou étapes).
+Le point de départ est la \textbf{racine} de l'arbre, et les issues possibles sont ses \textbf{feuilles}.
+
+On choisit ici de représenter un arbre de haut en bas, plutôt que de gauche à droite comme il est commun de le faire.
+Il va de soi que ces deux représentations sont équivalentes.
+
+La \textbf{profondeur} de l'arbre désigne le nombre total d'épreuves de l'expérience.
+On lit l'arbre en le parcourant de haut en bas, chaque embranchement correspondant à un résultat possible de l'épreuve d'après.
+La somme des probabilités de chaque branche est donc nécessairement $1$.
+Pour connaître la probabilité d'une issue, il faut multiplier les probabilités correspondant à chaque choix du parcours vers celle-ci.
+
+L'ensemble des feuilles $\omega$ de l'arbre correspond à l'univers $\Omega$ de l'expérience.
+On pourra donc connaître $|\Omega|$ en comptant les feuilles, et $P(\omega)$ en multipliant les probabilités qui mènent de la racine à la feuille.
+
+\ex{}{
+	On lance un D$6$ équilibré, dé à $6$ faces.
+	\begin{enumerate}[label=$\bullet$]
+		\item Si le numéro obtenu est un multiple de 3, on extrait au hasard une boule dans l'urne 1 qui contient 3 boules noires, 4 boules blanches et 3 boules rouges
+		\item Si le numéro obtenu n'est pas un multiple de 3, on extrait une boule dans l'urne 2 qui contient 3 boules noires et 2 boules blanches.
+	\end{enumerate}
+	On distingue deux étapes à l'expérience : on crée donc l'arbre de profondeur $2$ suivant, où on dénote par B, N, et R les évéments \og tirer une boule blanche, noire, rouge \fg respectivement.
+	
+	\begin{center}
+	\includegraphics[page=4, scale=1]{figures/fig-proba.pdf}
+	\end{center}
+	On ajoute les probabilités de chacun des événements sur les branches associées.
+	Par exemple, de la racine, pour atteindre l'embranchement \og multiple de $3$ \fg, il y a $1$ chance sur $3$ (car seuls $3$ et $6$ sont les issues favorables).
+	On ajoute donc un $\frac13$ sur la branche qui mène à cet événement, est un $\frac23$ sur l'autre.
+	
+	En sachant qu'on ait obtenu un nombre qui n'est pas un multiple de $3$, on tire une boule dans la deuxième urne  qui contient 3 boules noires et 2 boules blanches.
+	La probabilité d'obtenir une boule blanche est donc $\frac25$, et celle d'obtenir une boule noire est $\frac35$.
+	En notant toutes les probabilités ainsi calculées, on obtient l'arbre de probabilité suivant.
+	
+	\begin{center}
+	\includegraphics[page=5, scale=1]{figures/fig-proba.pdf}
+	\end{center}
+	La probabilité d'un chemin racine-feuille est le produit des probabilités rencontrées en le parcourant.
+	En outre, deux tels chemins correspondent à des événements disjoints.
+	On calcule par exemple
+		\[ P(N) = \frac23 \cdot \frac35 + \frac13 \cdot \frac3{10} = \frac12. \]
+}{}
+
+\chapter{Droites et fonctions affines}
+
+\section{Lecture graphique et définitions}\label{sec:aff-1}
+
+\begin{defn}[Fonction affine]
+	Un \textbf{fonction affine} est une fonction $f$ vérifiant pour tout $x\in\R$
+		\begin{align}
+			f(x) = ax + b, \label{eq:affine}
+		\end{align}
+	où $a$ et $b$ sont deux paramètres : le \textbf{coefficient directeur} et l'\textbf{ordonnée à l'origine}.
+\end{defn}
+
+\begin{nomen}
+	Une \textbf{fonction linéaire} est une fonction affine avec $b=0$.
+\end{nomen}
+
+\begin{prop}
+	La courbe représentative d'une fonction affine est une droite non verticale.
+\end{prop}
+
+\begin{rmq}
+	On peut réécrire la courbe représentative de $f$ de la façon suivante.
+		\[ \C_f = \bigset{ \bigl(x ; f(x) \bigr) \text{ où $x$ parcourt $\R$} }
+		= \bigset{ (x ; y ) \text{ où $x$ parcourt $\R$ et où $y = f(x)$} } \]
+\end{rmq}
+
+\begin{defn}[équation de droite]
+	Pour une fonction affine $f(x) = ax+b$, on parle de $\C_f$ comme la « \textbf{droite d'équation $y=ax+b$} ».
+\end{defn}
+
+
+\begin{nota}
+	Pour se défaire de la fonction $f$, on peut noter
+		\[ (d) : y = ax+b. \]
+\end{nota}
+
+\begin{nomen}
+	On dit d'un point $(x, y)$ du plan qu'il est à \textbf{coordonnées entières} dès que $x, y \in \Z$ sont deux entiers relatifs.
+\end{nomen}
+
+\begin{rmq}
+	L'équation $2x  - 3y= 3$ étant équivalente à $y = \frac23 x - 1$, c'est aussi une équation de droite.
+	La première forme est appelée \textbf{équation cartésienne}, et la deuxième \textbf{équation réduite}.
+\end{rmq}
+
+\section{Identifications des paramètres}
+
+\subsection{Ordonnée à l'origine $b$}
+
+\begin{lem}[Ordonnée à l'origine]
+	Soit $f(x) = a x + b$ affine.
+	Alors
+		\[ f(0) = b, \]
+	et donc
+		\[ (0 ; b) \in \C_f. \]
+\end{lem}
+
+\subsection{Coefficient directeur $a$}
+
+\begin{lem}[Coefficient directeur]
+\label{lem:coeff-dir}
+	Soit $f(x) = a x + b$ affine.
+	Alors, pour tout $x\in\R$ réel,
+		\[ f(x+1) - f(x) = a. \]
+	Lorsqu'on augmente l'abscisse $x$ de 1, l'ordonnée $y$ augmente de $a$.
+\end{lem}
+
+%\pf{Preuve du lemme \ref{lem:coeff-dir}}{
+\begin{proof}
+	Pour calculer $f(x+1)$, posons la variable intermédiaire $t = x+1$.
+	On a alors
+		\[ f(x+1) = f(t) = a\cdot t + b = a\cdot (x+1) + b = a \cdot x + a + b. \]
+	En soustrayant $f(x) = ax+b$, on trouve bien le résultat recherché.
+		\begin{align*}
+			f(x+1) - f(x) &= ax + a + b - (ax + b) \\ &= ax + a + b -ax -b \\ &= a
+		\end{align*}
+\end{proof}
+
+\begin{coro}
+	On a, en particulier,
+		$ a = f(1) - f(0).$
+\end{coro}
+
+
+\begin{rmq}
+	Du lemme \ref{lem:coeff-dir}, on déduit que lorsqu'on augmente l'abscisse $x$ de 1, l'ordonnée $y$ augmente de $a$.
+	
+	Il suit naturellement que, lorsqu'on augmente $x$ de 2, alors $y$ augmente de $a+a = 2a$.
+	De plus, lorsqu'on augmente $x$ de $-1$, alors $y$ augmente de $-a$.
+	
+	Plus généralement, on montre facilement que $f(x+c) - f(x) = ca$ pour n'importe que $c\in\R$.
+	Si on note $x' = x+c$ on a donc, en supposant $c \neq 0$ non nul,
+		\[ a = \dfrac{f(x+c)-f(x)}{c} = \dfrac{f(x') - f(x)}{x' - x}. \]
+	Ceci démontre la première partie du théorème suivant.
+\end{rmq}
+
+
+\begin{thm}[Interpolation linéaire]
+	Si deux points $(x_A, y_A)$ et $(x_B, y_B)$ vérifient $x_A\neq x_B$ et appartiennent à la droite d'équation $y=ax+b$, alors
+		\begin{align*}
+			a = \dfrac{y_A - y_B}{x_A - x_B} && \text{et} && b = \dfrac{x_A y_B - x_B y_A}{x_A-x_B}. 
+		\end{align*}
+\end{thm}
+
+\begin{rmq}
+	Un moyen mnémotechnique pour retenir la formule de $a$ est
+		\[ a = \dfrac{\text{différence des $y$}}{\text{différence des $x$}} = \dfrac{y-y'}{x-x'} = \dfrac{dy}{dx}. \]
+	L'ordre des différences ($A$ moins $B$ ou $B$ moins $A$) doit être le même au numérateur et au dénominateur mais, même s'il ne l'est pas, on aura seulement commis une erreur de signe.
+	Il est donc possible d'ignorer l'ordre des points et de décider du signe après grâce au caractère croissant ou décroissant de la fonction.
+	
+	La formule pour $b$ n'a pas a être retenue car, une fois $a$ connu, une appartenance d'un point suffit à donner une équation pour trouver $b$.
+\end{rmq}
+
+\section{Parallélisme et intersection}
+
+Considérons deux fonctions $f$ et $g$, affines sur $\R$.
+Les courbes représentatives $\C_f$ et $\C_g$ sont deux droites du plan.
+En géométrie, on distingue alors trois cas.
+	\begin{enumerate}
+		\item Les droites sont sécantes en un unique point $P$.
+		\item Les droites sont confondues (ou égales).
+		\item Les droites sont parallèles non confondues.
+	\end{enumerate}
+Le deuxième cas correspond à la situation où les deux fonction sont égales : c'est le cas $f=g$.
+Deux fonctions affines sont égales si et seulement si leurs paramètres (coefficient directeur et ordonnée à l'origine) sont égaux.
+
+Nous étudions d'abord algébriquement le cas $1$ de l'intesection.
+Les techniques de résolution d'équations linéaires nous mèneront naturellement vers des situations pour lesquelles deux droites n'ont pas de point d'intersection.
+
+\begin{nota}
+	Lorsque plusieurs équations sont valables simultanément, leur ensemble forme un \textbf{système d'équations}, et on les regroupe à l'aide d'une accolade.
+	Par exemple, le système suivant contient deux inconnues ($a$ et $b$) et deux équations.
+		\[ \begin{cases*} a = 2b + 3, \\ 2a + b = -1. \end{cases*} \]
+\end{nota}
+
+
+\begin{rmq}
+	On se rassurera sur le résultat trouvé en vérifiant que le point d'intersection appartient bien aux deux droites ci-dessus.
+		\begin{align*}
+			2x_P + 3 = 2 \cdot \dfrac56 + 3 = \dfrac{14}3 = y_P, && \et &&
+			-4x_P + 8 = -4\cdot\dfrac56 + 8 = \dfrac{14}3 = y_P.
+		\end{align*}
+\end{rmq}
+
+
+\begin{thm}[parallélisme et intersection]
+\label{thm:parallélisme-intersection}
+	Considérons deux droites 
+		\begin{align*}
+			(d) : y = ax+b, && \et &&
+			(d') : y = a'x+b',
+		\end{align*}
+	où $a, a', b, b' \in \R$ sont les paramètres des droites.
+	
+	On distingue alors les cas suivants sur l'intersection $(d) \cap (d')$.
+		\begin{enumerate}
+			\item Si $a \neq a'$, les droites $(d)$ et $(d')$ sont sécantes en un unique point d'intersection.
+			\item Sinon $a = a'$, les droites $(d)$ et $(d')$ sont parallèles et on distingue deux sous-cas.
+				\begin{enumerate}[label=\roman*)]
+					\item Si $b\neq b'$, il n'existe aucun point d'intersection, $(d) \cap (d') = \emptyset$.
+					\item Si $b=b'$, les droites sont confondues, $(d) \cap (d') = (d) = (d')$.
+				\end{enumerate}
+		\end{enumerate}
+\end{thm}
+
+\begin{defn}[Equation cartésienne de droite]
+\label{dfn:equation-cartesienne}
+	Une \textbf{équation cartésienne de droite} est une équation de la forme
+		\begin{align}
+			(d) : ax + by = c. \label{eq:cart}
+		\end{align}
+	La droite $(d)$ peut être verticale.
+\end{defn}
+
+\begin{nomen}
+	Une \textbf{heuristique} est une règle pragmatique qui fonctionne la plupart du temps.
+	Elle donne, par exemple, une idée de stratégie de recherche, ou d'aspect d'une solution, sans être toujours optimale, ou vraie.
+\end{nomen}
+
+\begin{rmq}
+	En voyant un système d'équations comme certaines contraintes imposées aux variables libres, on obtient l'heuristique
+		\begin{center}
+			( degrés de liberté ) = ( nombre de variables ) -- ( nombre de contraintes )
+		\end{center}
+	Le degré de liberté donne la forme des solutions : aucun degré de liberté correspond à une unique solution ; un degré de liberté correspond à une droite ; deux degrés à un plan ; etc...
+	
+	L'équation $y = x + 1$, à deux variables et une contrainte, représente une droite.
+	
+	Le système à deux variables et deux contraintes
+		\[ \begin{cases*} a = 2b + 3, \\ 2a + b = -1. \end{cases*} \]
+	n'a aucun degré de liberté : il n'y a \emph{probablement} qu'une seule solution.
+\end{rmq}
+
+%!TEX encoding = UTF8
+%!TEX root = 0-notes.tex
+
+\chapter{Signes et fonction inverse}
+\label{chap:signes}
+
+\section{Étude de signes}
+
+\begin{defn}[signe d'un nombre réel]
+	Soit $x\in\R$ un nombre réel quelconque.
+	On dit que
+		\begin{itemize}
+			\item $x$ est \textbf{strictement positif} si $x>0$ ;
+			\item $x$ est \textbf{strictement négatif} si $x<0$ ;
+			\item $x$ est \textbf{nul} si $x=0$.
+		\end{itemize}
+	En français, dire \og $x$ est positif \fg~signifie que $x$ est positif ou nul ($x\geq0$).
+	Il est préférable de dire \textbf{positif ou nul} pour éviter toute ambiguïté.
+\end{defn}
+
+\begin{nota}
+	Pour simplifier la notation, au lieu d'écrire \og $A >0$ et $B > 0$ \fg, on écrira juste \og$A, B > 0$\fg.
+\end{nota}
+
+\begin{thm}[signe du produit]
+	Soit $A, B \in \R$ deux réels.
+	On distingue trois cas sur le signe du produit $A \cdot B$.
+		\begin{enumerate}
+			\item Si $A \cdot B = 0$, alors $A=0$ ou $B=0$. (le \og ou \fg~est inclusif)
+			\item Si $A \cdot B > 0$, alors $A$ et $B$ ont le même signe :
+				\begin{enumerate}[label=\roman*)]
+					\item soit $A, B > 0$ ;
+					\item soit $A, B < 0$.
+				\end{enumerate}
+			\item Si $A \cdot B < 0$, alors $A$ et $B$ sont de signes opposés :
+				\begin{enumerate}[label=\roman*)]
+					\item soit $A> 0$ et $B < 0$ ;
+					\item  soit $A < 0$ et $B > 0$.
+				\end{enumerate}
+		\end{enumerate}
+\end{thm}
+
+
+\begin{coro}[signe du quotient]
+	Soit $A, B \in \R$ deux réels. On suppose que $B \neq 0$.
+	
+	Alors, le signe de $\frac1B$ est le même que celui de $B$, et donc le signe du quotient
+		\[ \dfrac{A}{B} = A \cdot \dfrac1B \]
+	suit les mêmes règles que celui du produit $A \cdot B$.
+\end{coro}
+
+\begin{coro}[manipulation d'inégalités]
+	Soient $E, F, a, b \in \R$ quatre réels. Alors
+	\begin{itemize}
+	\item
+	ajouter une constante ne change pas le sens de l'inégalité.
+		\begin{align*}
+			E \leq F && \iff && E+b \leq F+b
+		\end{align*}
+	\item
+	de plus, si $a>0$, on a l'équivalence
+		\begin{align*}
+			E \leq F && \iff && a E \leq a F.
+		\end{align*}
+	\item
+	mais, si $a<0$, la multiplication par $a$ change le sens de l'inégalité :
+		\begin{align*}
+			E \leq F && \iff && a E \geq a F.
+		\end{align*}
+	\end{itemize}
+\end{coro}
+
+\begin{proof}
+	Comme $E \leq F$ est équivalent à $F - E \geq 0$, c'est un nombre positif.
+	
+	Si $a < 0$, multiplier un négatif par un positif donne un négatif, et donc $a(F-E) \leq 0$.
+	D'où $aF \leq aE \iff aE \geq aF$.
+\end{proof}
+
+\begin{rmq}
+	$E \leq F \iff F \geq E$.
+\end{rmq}
+
+\subsection{Fonctions affines}
+
+\begin{prop}
+Soit $f$ une fonction affine d'expression algébrique $f(x)=ax+b$. 
+\begin{enumerate}[label=(\roman*)]
+\item si $a=0$, alors $f$ est constante et du signe de $b$ ;
+\item si $a>0$, alors $f(x) \geq 0 \iff x \geq -b/a$ ;
+\item si $a<0$,  alors $f(x) \geq 0 \iff x \leq -b/a$.
+\end{enumerate}
+\end{prop}
+
+\begin{rmq}
+	Si $f$ est affine de coefficient directeur $a\neq0$ ($f$ est non constante), on peut déterminer $f(x) \geq 0$ en considérant le nombre $x_0$ vérifiant $f(x_0)=0$.
+	Si $a>0$, $f$ est croissante, donc $f(x) \geq 0$ sur $[x_0 ; +\infty[$.
+	Sinon, $a <0$, et $f$ est décroissante, donc $f(x) \geq 0$ sur $]-\infty ; x_0 ]$.
+\end{rmq}
+
+\subsection{Produits de fonctions affines}
+
+\begin{rmq}[problème de signe]
+	On souhaite connaître pour quels $x\in\D$ l'inégalité suivante est vérifée.
+		\[ f(x) = \dfrac{6x^2 - 5x - 4}{3-x} \geq 0. \]
+	En premier lieu, remarquons que certaines valeurs sont interdites : ce sont les valeurs pour lesquelles le dénominateur s'annule.
+	Le domaine de $f$ est donc tout $\R$ perforé en $x=3$ :
+		\[ \D = \R - \{3 \} = ]-\infty ; 3[ \cup ]3 ; +\infty[. \]
+	
+	Ensuite, on vérifie qu'on a bien 
+		\[ (3x-4)(2x+1) = 6x^2 - 5x - 4, \]
+	factorisation qui nous est donnée par le professeur.
+	
+	On obtient alors
+		\[ f(x) = \dfrac{(3x-4)(2x+1)}{3-x}, \]
+	et connaître le signe de chacun des facteurs permettra de connaitre le signe de $f$.
+	
+	On a les équivalences suivantes.
+		\begin{align*}
+			3x-4 \geq 0 && 2x+1  \geq 0 && 3-x \geq 0 \\
+			\big\Updownarrow\quad && \big\Updownarrow\quad && \big\Updownarrow\quad \\
+			x \geq \dfrac43 && x \geq -\dfrac12 && x \leq 3
+		\end{align*}
+	On synthétise les signes obtenus dans le tableau suivant qu'on appelle \textbf{tableau de signes}.
+	
+	\begin{center}
+	\begin{tikzpicture}
+		\tkzTabInit
+		 %[lgt=3,espcl=1.5]
+	       		{$x$ / 1 , $3x-4$ / 1, $2x+1$ / 1, $3-x$ / 1, $f(x)$ / 1}
+	       		{$-\infty$, $-\frac12$, $\frac43$, $3$, $+\infty$}
+	       		
+		\tkzTabLine
+			{,-,t,-,z,+,t,+}
+		\tkzTabLine
+			{,-,z,+,t,+,t,+}
+		\tkzTabLine
+			{,+,t,+,t,+,z,-}
+		\tkzTabLine
+			{,+,t,-,t,+,d,-}
+	\end{tikzpicture}
+	\end{center}
+	
+	Le signe de $f(x)$ dans la première case est déduit du fait qu'on fait \og moins $\times$ moins $\times$ plus \fg, qui donne \og plus \fg, car le produit d'un positif avec deux négatifs est positif. On fait idem pour le reste.
+	
+	De plus, on note avec les doubles barres $||$ la valeur interdite $x=3$.
+	
+	En conclusion, l'ensemble des $x \in \D$ vérifiant $f(x) \geq 0$ est donné par
+		\[ \Bigset{ x \in \R-\{3\} \tq f(x) \geq 0 } = \left]-\infty ; -\dfrac12 \right] \bigcup \left[ \dfrac43 ; 3 \right[. \]
+\end{rmq}
+
+\section{Fonction inverse}
+
+\begin{defn}
+	La \textbf{fonction inverse} $f$ est donnée algébriquement par
+		\[ f(x) = \dfrac1x. \]
+\end{defn}
+
+
+\begin{prop}
+	La fonction inverse n'est pas bien définie en 0 : prendre l'inverse de 0 n'a pas de sens.
+\end{prop}
+
+\begin{proof}
+	Supposons que $\frac10 = x$ pour un certain nombre réel $x\in\R$.
+	Alors $1 = x\cdot0 = 0$, ce qui n'est pas vrai. 
+\end{proof}
+
+\begin{defn}[fonction impaire]
+	Un fonction $f$ est dite \textbf{fonction impaire} dès que
+		\[ f(-x) = -f(x) \qquad\qquad\text{ pour tout $x\in\R$.} \]
+	Le graphe de $f$ est alors symétrique par rapport à l'origine du repère.
+\end{defn}
+
+\begin{nota}
+	On ajoute une \textbf{étoile} en exposant d'un ensemble pour parler de cet ensemble hormis 0.
+	Ainsi, $E^* = E - \{ 0 \}$ et, en particulier,
+		\begin{align*}
+			\Q^* = \Q-\{0\} = \Bigset{\dfrac{a}b \tq a, b\in\Z^*}, && \et && \R^* = \R-\{0\} = ]-\infty ; 0[ \cup ]0 ; +\infty[.
+		\end{align*}
+\end{nota}
+
+\section{Domaine de définition}
+
+\begin{defn}[domaine de définition, valeurs interdites]
+	Soit $f$ une fonction quelconque. On souhaite connaître le domaine le plus grand possible sur lequel définir $f$.
+	On l'appelle le \textbf{domaine de définition}, qu'on note $\D_f$.
+	
+	Pour cela, on étudie la fonction sur $\R$ dont on supprime les \textbf{valeurs interdites}, c'est-à-dire les antécédents pour lesquels $f$ est mal définie.
+	On étudiera dans ce chapitre deux conditions qui permettront d'identifier ces valeurs interdites :
+		\begin{enumerate}
+			\item l'expression sous une racine carrée doit toujours être positive ou nulle ; et
+			\item un dénominateur ne doit jamais être nul.
+		\end{enumerate}
+\end{defn}
+
+\chapter{Variations et extrema}
+
+\section{Variations et tableaux de variations}
+
+\subsection{Définitions}
+
+\begin{defn}
+	Soit $f : \D \rightarrow \R$ une fonction $f$ quelconque sur un intervalle $I\subseteq\R$.
+	Alors
+		\begin{itemize}
+			\item On dit que $f$ est \textbf{strictement croissante} si, pour tous les $x,y\in I$ du domaine,
+				\begin{align*}
+					x < y && \iff && f(x) < f(y).
+				\end{align*}	
+			On interprète l'implication ainsi :
+			\begin{center}
+				\og lorsqu'on augmente l'abscisse $x$, l'ordonnée $f(x)$ augmente \fg.
+			\end{center}
+				
+			\item On dit que $f$ est \textbf{strictement décroissante} si, pour tous les $x,y\in I$ du domaine,
+				\begin{align*}
+					x < y && \iff && f(x) > f(y).
+				\end{align*}
+			On interprète l'implication ainsi :
+			\begin{center}
+				\og lorsqu'on augmente l'abscisse $x$, l'ordonnée $f(x)$ diminue \fg.
+			\end{center}
+				
+			\item On dit que $f$ est \textbf{constante} si, pour tous les $x\in I$ du domaine, et pour une certaine constante $K\in\R$,
+				\begin{align*}
+					f(x) = K.
+				\end{align*}
+		\end{itemize}
+\end{defn}
+
+\begin{rmq}
+	On dira d'une fonction croissante qu'elle \textbf{préserve l'ordre} car si $x$ est plus petit que $y$, alors $f(x)$ est plus petit que $f(y)$.
+	Similairement, une fonction décroissante \textbf{inverse l'ordre}.
+\end{rmq}
+
+\subsection{Fonctions affines}
+
+\begin{thm}[variation d'une fonction affine]
+	Soit $f$ une fonction affine où $a, b \in\R$ sont ses deux paramètres réels.
+		\begin{align*}
+			f(x) = a x + b && (x\in\R)
+		\end{align*}
+	On distingue trois cas de figure.
+		\begin{itemize}
+			\item Si $a < 0$, alors $f$ est strictement décroissante.
+			\item Si $a=0$, alors $f$ est constante.
+			\item Si $a>0$, alors $f$ est strictement croissante.
+		\end{itemize}
+\end{thm}
+
+%\pf{Démonstration du théorème \ref{thm:affine-var}}{
+\begin{proof}
+	Soient $(x_A;y_A), (x_B; y_B) \in \C_f$ deux points distincts de la droite $\C_f$.
+	Supposons de sucroît que $x_A < x_B$, c'est-à-dire que $A$ soit à gauche de $B$ dans le plan.
+	
+	Le dénominateur du coefficient directeur
+		\[ a = \dfrac{y_B - y_A}{x_B-x_A} \]
+	 est positif, et donc le numérateur détermine son signe.
+	 
+	 Si $a<0$, c'est que $y_B < y_A$, et donc que la fonction $f$ est décroissante.
+	 Graphiquement, le point $A$ est à gauche et au-dessus du point $B$, et la droite descend.
+	 
+	 Les autres cas sont similaires.
+\end{proof}
+
+\subsection{Fonctions carré, racine carrée}
+
+\begin{nota}
+	On pose $\R_-^* = ]-\infty ; 0[$ les nombres réels strictement négatifs, et $\R_+^* = ]0 ; \infty[$ les nombres réels strictement positifs.
+\end{nota}
+
+\begin{thm}
+	La fonction carré $f(x) = x^2$ est strictement décroissante sur $\R_-^*$, et strictement croissante sur $\R_+^*$.
+\end{thm}
+
+\begin{proof}
+	Si $0 < x < y$, alors on multiplie par $x$ et $y$ pour obtenir
+		\begin{align*}
+			0 < x^2 < yx && \et && 0 < xy < y^2,
+		\end{align*}
+	et donc $0 < x^2 < yx = xy < y^2$, d'où $f(x) < f(y)$ : $f$ est croissante sur $\R_+^*$.
+	
+	Si $x < y < 0$, alors multiplier par $x$ ou $y$ change le sens des inégalités :
+		\begin{align*}
+			x^2 > yx > 0 && \et && xy > y^2 > 0,
+		\end{align*}
+	d'où $x^2 > y^2$, ce qui conclut.
+\end{proof}
+
+\begin{thm}
+	La fonction racine carrée $f(x) = \sqrt{x}$ est strictement croissante sur $\R_+$.
+\end{thm}
+
+\subsection{Variations de fonctions parentes}
+
+À partir des variations d'une fonction qu'on connaît bien (par exemple une fonction affine, la fonction carré), on peut déduire les variations de toute une famille de fonctions apparentées.
+
+\begin{thm}[variations de fonctions parentes]
+	Soit une fonction $f$ continue sur un domaine $\D$, et $c\in\R$ un nombre réel.
+		\begin{enumerate}
+			\item La fonction
+				\[ g(x) = f(x) + c \]
+			admet les mêmes variations que $f$.
+			\item La fonction
+				\[ h(x) = c \cdot f(x) \]
+				\begin{enumerate}[label=(\roman*)]
+					\item si $c>0$, $h$ admet les mêmes variations que $f$.
+					\item si $c<0$, les variations de $h$ sont opposées à celles de $f$ (croissante devient décroissante, décroissante devient croissante, et constante reste idem).
+				\end{enumerate}
+% moved to Fonctions de référence
+%			\item La fonction
+%				\[ F(x) = f(x+c) \]
+%			admet les mêmes variations que $f$ mais décalées de $c$ vers la gauche.
+		\end{enumerate}
+\end{thm}
+
+\begin{rmq}
+	On ne peut rien dire en général sur les variations de $f(x)+g(x)$ si $f$ et $g$ sont de variations différentes.
+	Prenons par exemple $f(x) = x$ et $g(x) = -2x$, ou $f(x) = 2x$ et $g(x) = -x$.
+\end{rmq}
+
+\section{Extrema}
+
+\begin{defn}[minimum, maximum d'une fonction sur un intervalle]
+	Soit $f : I \rightarrow \R$ une fonction réelle $f$ sur un intervalle $I$.
+	
+	On dit que, pour $x^\star \in I$, $f(x^\star)$ est le \textbf{minimum} de $f$ sur $I$ dès que
+		\[ f(x^\star) \leq f(x), \]
+	pour tout $x\in I$.
+	$x^\star$ est l'antécédent qui \emph{réalise} le minimum. Il n'est pas nécessairement unique.
+	
+	On dit que, pour $x^\star \in I$, $f(x^\star)$ est le \textbf{maximum} de $f$ sur $I$ dès que
+		\[ f(x^\star) \geq f(x), \]
+	pour tout $x\in I$.
+	$x^\star$ est l'antécédent qui \emph{réalise} le maximum. Il n'est pas nécessairement unique.
+\end{defn}
+
+\begin{prop}
+	Les extrema d'une fonction sont atteints lorsqu'elle change de variations ou aux bornes de son domaine.
+\end{prop}
+
+\chapter{Variations et extrema}
+\label{chap:variations}
+
+
+\section{Variations et tableaux de variations}
+
+\subsection{Définitions}
+
+\begin{defn}[variations]
+	Soit $f : \D \rightarrow \R$ une fonction $f$ quelconque sur un intervalle $I\subseteq\R$.
+	Alors
+		\begin{itemize}
+			\item On dit que $f$ est \textbf{strictement croissante} si, pour tous les $x,y\in I$ du domaine,
+				\begin{align*}
+					x < y && \iff && f(x) < f(y).
+				\end{align*}	
+			On interprète l'implication ainsi :
+			\begin{center}
+				\og lorsqu'on augmente l'abscisse $x$, l'ordonnée $f(x)$ augmente \fg.
+			\end{center}
+				
+			\item On dit que $f$ est \textbf{strictement décroissante} si, pour tous les $x,y\in I$ du domaine,
+				\begin{align*}
+					x < y && \iff && f(x) > f(y).
+				\end{align*}
+			On interprète l'implication ainsi :
+			\begin{center}
+				\og lorsqu'on augmente l'abscisse $x$, l'ordonnée $f(x)$ diminue \fg.
+			\end{center}
+				
+			\item On dit que $f$ est \textbf{constante} si, pour tous les $x\in I$ du domaine, et pour une certaine constante $K\in\R$,
+				\begin{align*}
+					f(x) = K.
+				\end{align*}
+		\end{itemize}
+\end{defn}
+
+\begin{rmq}
+	On dira d'une fonction croissante qu'elle \textbf{préserve l'ordre} car si $x$ est plus petit que $y$, alors $f(x)$ est plus petit que $f(y)$.
+	Similairement, une fonction décroissante \textbf{inverse l'ordre}.
+\end{rmq}
+
+\begin{thm}[variation d'une fonction affine]
+	Soit $f$ une fonction affine où $a, b \in\R$ sont ses deux paramètres réels.
+		\begin{align*}
+			f(x) = a x + b && (x\in\R)
+		\end{align*}
+	On distingue trois cas de figure.
+		\begin{itemize}
+			\item Si $a < 0$, alors $f$ est strictement décroissante.
+			\item Si $a=0$, alors $f$ est constante.
+			\item Si $a>0$, alors $f$ est strictement croissante.
+		\end{itemize}
+\end{thm}
+
+%\pf{Démonstration du théorème \ref{thm:affine-var}}{
+\begin{proof}
+	Soient $(x_A;y_A), (x_B; y_B) \in \C_f$ deux points distincts de la droite $\C_f$.
+	Supposons de sucroît que $x_A < x_B$, c'est-à-dire que $A$ soit à gauche de $B$ dans le plan.
+	
+	Le dénominateur du coefficient directeur
+		\[ a = \dfrac{y_B - y_A}{x_B-x_A} \]
+	 est positif, et donc le numérateur détermine son signe.
+	 
+	 Si $a<0$, c'est que $y_B < y_A$, et donc que la fonction $f$ est décroissante.
+	 Graphiquement, le point $A$ est à gauche et au-dessus du point $B$, et la droite descend.
+	 
+	 Les autres cas sont similaires.
+\end{proof}
+
+\subsection{Fonctions carré, racine carrée}
+
+\begin{nota}
+	On pose $\R_-^* = ]-\infty ; 0[$ les nombres réels strictement négatifs, et $\R_+^* = ]0 ; \infty[$ 
+	les nombres réels strictement positifs.
+\end{nota}
+
+\begin{thm}
+	La fonction carré $f(x) = x^2$ est strictement décroissante sur $\R_-^*$, et strictement croissante sur $\R_+^*$.
+\end{thm}
+
+\begin{proof}
+	Si $0 < x < y$, alors on multiplie par $x$ et $y$ pour obtenir
+		\begin{align*}
+			0 < x^2 < yx && \et && 0 < xy < y^2,
+		\end{align*}
+	et donc $0 < x^2 < yx = xy < y^2$, d'où $f(x) < f(y)$ : $f$ est croissante sur $\R_+^*$.
+	
+	Si $x < y < 0$, alors multiplier par $x$ ou $y$ change le sens des inégalités :
+		\begin{align*}
+			x^2 > yx > 0 && \et && xy > y^2 > 0,
+		\end{align*}
+	d'où $x^2 > y^2$, ce qui conclut.
+\end{proof}
+
+\begin{thm}
+	La fonction racine carrée $f(x) = \sqrt{x}$ est strictement croissante sur $\R_+$.
+\end{thm}
+
+\subsection{Variations de fonctions parentes}
+
+À partir des variations d'une fonction qu'on connaît bien (par exemple une fonction affine, la fonction carré, et on en verra d'autres au chapitre Fonctions de référence), on peut déduire les variations de toute une famille de fonctions apparentées.
+
+\begin{thm}[variations de fonctions parentes]
+	Soit une fonction $f$ continue sur un domaine $\D$, et $c\in\R$ un nombre réel.
+		\begin{enumerate}
+			\item La fonction
+				\[ g(x) = f(x) + c \]
+			admet les mêmes variations que $f$.
+			\item La fonction
+				\[ h(x) = c \cdot f(x) \]
+				\begin{enumerate}[label=(\roman*)]
+					\item si $c>0$, $h$ admet les mêmes variations que $f$.
+					\item si $c<0$, les variations de $h$ sont opposées à celles de $f$ (croissante devient décroissante, décroissante devient croissante, et constante reste idem).
+				\end{enumerate}
+
+			\item La fonction
+				\[ F(x) = f(x+c) \]
+			admet les mêmes variations que $f$ mais décalées de $c$ vers la gauche.
+		\end{enumerate}
+\end{thm}
+
+\begin{rmq}
+On ne peut rien dire en général sur les variations de $f(x)+g(x)$ si $f$ et $g$ sont de variations différentes.
+Prenons par exemple $f(x) = x$ et $g(x) = -2x$, ou $f(x) = 2x$ et $g(x) = -x$.
+\end{rmq}
+
+\section{Extrema}
+
+\begin{defn}[minimum, maximum d'une fonction sur un intervalle]
+	Soit $f : I \rightarrow \R$ une fonction réelle $f$ sur un intervalle $I$.
+	
+	On dit que, pour $x^\star \in I$, $f(x^\star)$ est le \textbf{minimum} de $f$ sur $I$ dès que
+		\[ f(x^\star) \leq f(x), \]
+	pour tout $x\in I$.
+	$x^\star$ est l'antécédent qui \emph{réalise} le minimum. Il n'est pas nécessairement unique.
+	
+	On dit que, pour $x^\star \in I$, $f(x^\star)$ est le \textbf{maximum} de $f$ sur $I$ dès que
+		\[ f(x^\star) \geq f(x), \]
+	pour tout $x\in I$.
+	$x^\star$ est l'antécédent qui \emph{réalise} le maximum. Il n'est pas nécessairement unique.
+\end{defn}
+
+\begin{prop}
+Les extrema d'une fonction sont atteints lorsqu'elle change de variations ou aux bornes de son domaine.
+\end{prop}
 
 \end{document}

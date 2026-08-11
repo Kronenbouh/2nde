@@ -3,7 +3,7 @@
 \begin{document}
 \pagestyle{fancy}
 \fancyhead[L]{Seconde}
-\fancyhead[C]{\textbf{DS n°1 — Ensembles de nombres}}
+\fancyhead[C]{\textbf{DS n°2 — Plan cartésien}}
 \fancyhead[R]{\today}
 
 \reversemarginpar
@@ -25,19 +25,21 @@ Consignes particulières :
 
 \hrule
 
-\exe{2}{
+\exe{4}{
 Compléter les affirmations suivantes :
 \begin{enumerate}
 \item $\N \dots \Z \dots \D \dots \Q \dots \R$.
 \item Le plan cartésien est l'ensemble $\{ (\dots, \dots) \tq x \in \dots \et y \in \dots \}$.
+\item Un repère est un système de trois $\dots$
+\item Dans un repère orthogonal les axes sont $\dots$
 \end{enumerate}
 }{exe:1}{
-
+Voir cours
 }
 
 \exe{4}{
 On donne $\sqrt{2} \approx 1,414~213$. \\
-On considère le point $H(\sqrt{2} ; 1)$. 
+On considère le point $H(\sqrt{2} ; 2)$. 
 
 \begin{enumerate}
 \item Proposer un encadrement à $10^{-1}$ près de l'abscisse de $H$.
@@ -52,7 +54,19 @@ $x_E$ est la borne inférieure de l'encadrement proposé et $x_F$ sa borne supé
 	\end{tikzpicture}
 \end{center}
 }{exe:2}{
-	
+\begin{enumerate}
+\item $1,4 < \sqrt{2} <1,5$
+\item 
+\end{enumerate}
+
+\begin{center}
+	\begin{tikzpicture}[>=stealth, scale=.8]
+		\begin{axis}[xmin = 1, xmax=2, ymin=-0.1, ymax=3, axis x line=middle, axis y line=middle, axis line style=<->, xlabel={}, ylabel={}, grid=both, grid style = {opacity=.5}, clip=false, xtick distance = 0.1, ytick distance=1, x=10cm, y=1cm]
+		\addplot[black, mark=*, mark size = 1] (1.4,2) node[above right] {$E$};
+		\addplot[black, mark=*, mark size = 1] (1.5,2) node[above right] {$F$};
+		\end{axis}
+	\end{tikzpicture}
+\end{center}
 }
 	
 \exe{4}{
@@ -60,11 +74,18 @@ On considère les points $A\left(4;\frac23 \right)$ et $B\left(3;-\frac43 \right
 \begin{enumerate}
 \item Calculer la \textbf{valeur exacte} de la distance $AB$.
 \item Calculer les coordonnées du point $M(x_M, y_M)$, milieu du segment $[AB]$.
-\item Donner les \textbf{plus petits} ensembles de nombres auxquels $x_I$ et $y_I$ appartiennent.
+\item .Donner les \textbf{plus petits} ensembles de nombres auxquels $x_M$ et $y_M$ appartiennent.
 \end{enumerate}
-\textit{``plus petit'' est entendu au sens de l'inclusion}
+\textit{Remarque : ``plus petit'' est entendu au sens de l'inclusion}
 }{exe:3}{
-
+\begin{enumerate}
+\item $AB^2 = (x_B-x_A)^2+(y_B-y_A)^2=1+4=5$. Donc $AB=\sqrt{5}$.
+\item \[ \left \{ \def\arraystretch{2.2} \begin{array}{c c c c c}
+x_M & = & \frac{4 + 3}{2} & = & \dfrac72 \\
+y_M & = & \frac{\dfrac23 + (-\dfrac43)}{2} & = & - \dfrac13 \\
+\end{array} \right. \]
+\item $x_M \in \D$ et $y_M \in \Q$.
+\end{enumerate}
 }
 	
 \exe{4}{
@@ -118,7 +139,15 @@ On considère le triangle de sommets :
 	\end{center}
 \end{multicols}
 }{exe:4}{
-
+	\begin{enumerate}
+		\item 
+		\begin{enumerate}[label=\roman*)]
+			\item $AB^2 = 365$
+			\item $AC^2 = 73$
+			\item $BC^2 = 292$
+		\end{enumerate}
+		\item $AB^2=AC^2+BC^2$ donc, d'après la réciproque du théorème de Pythagore, le triangle est rectangle en $C$.
+	\end{enumerate}
 }
 %	\begin{center}
 %	\begin{tikzpicture}[>=stealth, scale=1]
@@ -144,18 +173,26 @@ On considère le triangle de sommets :
 %	\end{enumerate}
 %}
 
-\exe{}{
-(Exercice bonus) \\
-On considère les points $A \left ( \frac{-3}{2} ; 4 \right )$ et $B \left ( 7 ; \frac{-3}5 \right)$. 
+\exe{4}{
+On considère les points $A \left ( -\frac{3}{2} ; 4 \right )$ et $B \left ( 2 ; 1 \right)$. 
 Calculer les coordonnées du point $C$ afin que $B$ soit le milieu du segment $[AC]$
 }{exe:5}{
+On doit résoudre $2 = \dfrac{-\frac{3}{2} + x_C}2$ soit $x_C = 4 + \frac{3}{2} = \frac{11}{2}$. 
+On fait de même avec l'ordonnée et on trouve $y_C = -2$.
+}
 
+\exe{}{
+(Exercice bonus) \\
+Donner deux points $A$ et $B$ dont toutes les coordonnées sont des \textbf{nombres réels non rationnels} 
+et tels que, les coordonnées du point $M$, milieu du segment $[AB]$, sont des \textbf{nombres entiers}.
+}{exe:6}{
+On prend par exemple : $A(\sqrt{2}, \sqrt{3})$ et $B(-\sqrt{2}, -\sqrt{3})$.
 }
 
 %%%%%%%%%%%%
 
-%\newpage
-%\fancyhead[C]{\textbf{Solutions}}
-%\shipoutAnswer
+\newpage
+\fancyhead[C]{\textbf{Solutions}}
+\shipoutAnswer
 
 \end{document}

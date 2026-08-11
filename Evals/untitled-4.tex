@@ -1,0 +1,283 @@
+% Avec un repère
+
+% @see : https://coopmaths.fr/alea?uuid=3a3ec&id=2G22-1&n=2&d=10&s=1&alea=hKYV&cd=1&cols=1
+\exe{}{
+
+\begin{enumerate}[itemsep=1em]
+	\item  Dans un repère orthonormé $\big(O ; \vec i,\vec j\big)$, représenter le vecteur de coordonnées $\begin{pmatrix}-7 \\8\end{pmatrix}$, ayant pour origine le point $E\left(4;-2\right)$.
+	\item  Dans un repère orthonormé $\big(O ; \vec i,\vec j\big)$, représenter le vecteur de coordonnées $\begin{pmatrix}-8 \\4\end{pmatrix}$, ayant pour origine le point $F\left(5;-8\right)$.
+\end{enumerate}
+}{exe:p3_1}{
+
+}
+
+%see https://github.com/Mattuuuuh/Maths-2nde/blob/master/Exercices/07-Vecteurs/serie1/serie1.tex
+\exe{}{
+\begin{enumerate}
+	\item Calculer les coordonnées puis dessiner les vecteurs suivants dans un repère.
+		\begin{align*}
+			\vec{u} = \pvec{-2}{4}, && \vec{v} = 2\vec{u}, && \vec{w} = -\dfrac32 \vec{u}, && \vec{z} = -\dfrac12 \vec{u},
+		\end{align*}	
+	\item Donner les normes de ces vecteurs.
+\end{enumerate}
+}{exe:p3_2}{
+
+}
+
+% @see : https://coopmaths.fr/alea?uuid=a02bc&id=2G22-2&n=2&d=10&alea=HoVO&cd=1&cols=1
+\exe{}{
+\begin{multicols}{2}
+\begin{enumerate}[itemsep=1em]
+	\item Lire les coordonnées du vecteur $\overrightarrow{u}$.
+
+\medskip
+\begin{tikzpicture}[baseline,scale = 0.75]
+
+    \tikzset{
+      point/.style={
+        thick,
+        draw,
+        cross out,
+        inner sep=0pt,
+        minimum width=5pt,
+        minimum height=5pt,
+      },
+    }
+    \clip (-7,-2) rectangle (2,4);
+    	\draw[color ={black},line width = 1.2,-{Stealth[width=4mm]}] (-7,0)--(2,0);
+	\draw[color ={black},line width = 1.2,-{Stealth[width=4mm]}] (0,-2)--(0,4);
+	\draw[color ={black},opacity = 0.4] (-7,1)--(2,1);
+	\draw[color ={black},opacity = 0.4] (-7,-1)--(2,-1);
+	\draw[color ={black},opacity = 0.4] (-7,2)--(2,2);
+	\draw[color ={black},opacity = 0.4] (-7,-2)--(2,-2);
+	\draw[color ={black},opacity = 0.4] (-7,3)--(2,3);
+	\draw[color ={black},opacity = 0.4] (-7,4)--(2,4);
+	\draw[color ={black},opacity = 0.4] (1,-2)--(1,4);
+	\draw[color ={black},opacity = 0.4] (-1,-2)--(-1,4);
+	\draw[color ={black},opacity = 0.4] (2,-2)--(2,4);
+	\draw[color ={black},opacity = 0.4] (-2,-2)--(-2,4);
+	\draw[color ={black},opacity = 0.4] (-3,-2)--(-3,4);
+	\draw[color ={black},opacity = 0.4] (-4,-2)--(-4,4);
+	\draw[color ={black},opacity = 0.4] (-5,-2)--(-5,4);
+	\draw[color ={black},opacity = 0.4] (-6,-2)--(-6,4);
+	\draw[color ={black},opacity = 0.4] (-7,-2)--(-7,4);
+	\draw[color ={gray},opacity = 0.3] (-7,0)--(2,0);
+	\draw[color ={gray},opacity = 0.3] (-7,1)--(2,1);
+	\draw[color ={gray},opacity = 0.3] (-7,-1)--(2,-1);
+	\draw[color ={gray},opacity = 0.3] (-7,2)--(2,2);
+	\draw[color ={gray},opacity = 0.3] (-7,-2)--(2,-2);
+	\draw[color ={gray},opacity = 0.3] (-7,3)--(2,3);
+	\draw[color ={gray},opacity = 0.3] (0,-2)--(0,4);
+	\draw[color ={gray},opacity = 0.3] (1,-2)--(1,4);
+	\draw[color ={gray},opacity = 0.3] (-1,-2)--(-1,4);
+	\draw[color ={gray},opacity = 0.3] (2,-2)--(2,4);
+	\draw[color ={gray},opacity = 0.3] (-2,-2)--(-2,4);
+	\draw[color ={gray},opacity = 0.3] (-3,-2)--(-3,4);
+	\draw[color ={gray},opacity = 0.3] (-4,-2)--(-4,4);
+	\draw[color ={gray},opacity = 0.3] (-5,-2)--(-5,4);
+	\draw[color ={gray},opacity = 0.3] (-6,-2)--(-6,4);
+	\draw[color ={black},line width = 1.2] (0,-0.2)--(0,0.2);
+	\draw[color ={black},line width = 1.2] (1,-0.2)--(1,0.2);
+	\draw[color ={black},line width = 1.2] (-1,-0.2)--(-1,0.2);
+	\draw[color ={black},line width = 1.2] (-2,-0.2)--(-2,0.2);
+	\draw[color ={black},line width = 1.2] (-3,-0.2)--(-3,0.2);
+	\draw[color ={black},line width = 1.2] (-4,-0.2)--(-4,0.2);
+	\draw[color ={black},line width = 1.2] (-5,-0.2)--(-5,0.2);
+	\draw[color ={black},line width = 1.2] (-0.2,0)--(0.2,0);
+	\draw[color ={black},line width = 1.2] (-0.2,1)--(0.2,1);
+	\draw[color ={black},line width = 1.2] (-0.2,-1)--(0.2,-1);
+	\draw[color ={black},line width = 1.2] (-0.2,2)--(0.2,2);
+	\draw[opacity=0.8] (1,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$1$};
+	\draw[opacity=0.8] (-1,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$-1$};
+	\draw[opacity=0.8] (-2,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$-2$};
+	\draw[opacity=0.8] (-3,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$-3$};
+	\draw[opacity=0.8] (-4,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$-4$};
+	\draw[opacity=0.8] (-5,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$-5$};
+	\draw[opacity=0.8] (-6,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$-6$};
+	\draw[opacity=0.8] (-0.5,1.1) node[anchor = center, rotate=0] {\scriptsize \color{black}$1$};
+	\draw[opacity=0.8] (-0.5,2.1) node[anchor = center, rotate=0] {\scriptsize \color{black}$2$};
+	\draw[opacity=0.8] (-0.5,3.1) node[anchor = center, rotate=0] {\scriptsize \color{black}$3$};
+	\draw[opacity=0.8] (-0.5,-0.9) node[anchor = center, rotate=0] {\scriptsize \color{black}$-1$};
+	\draw [color={black}] (-0.3,-0.3) node[anchor = center,scale=1, rotate = 0] {O};
+	\draw[color ={blue},line width = 2,-{Stealth[width=4mm]}] (-1,2)--(-6,3);
+	\draw [color={blue}] (-3.401942,2.99029) node[anchor = center,scale=1.5, rotate = 0] {u};
+	\draw[color ={blue},-{Stealth[width=3mm]}] (-3.65,3.37)--(-3.03,3.37);
+	
+	\item Lire les coordonnées du vecteur $\overrightarrow{u}$.
+
+\medskip
+\begin{tikzpicture}[baseline,scale = 0.75]
+
+    \tikzset{
+      point/.style={
+        thick,
+        draw,
+        cross out,
+        inner sep=0pt,
+        minimum width=5pt,
+        minimum height=5pt,
+      },
+    }
+    \clip (-2,-2) rectangle (2,2);
+    	\draw[color ={black},line width = 1.2,-{Stealth[width=4mm]}] (-2,0)--(2,0);
+	\draw[color ={black},line width = 1.2,-{Stealth[width=4mm]}] (0,-2)--(0,2);
+	\draw[color ={black},opacity = 0.4] (-2,1)--(2,1);
+	\draw[color ={black},opacity = 0.4] (-2,-1)--(2,-1);
+	\draw[color ={black},opacity = 0.4] (-2,2)--(2,2);
+	\draw[color ={black},opacity = 0.4] (-2,-2)--(2,-2);
+	\draw[color ={black},opacity = 0.4] (1,-2)--(1,2);
+	\draw[color ={black},opacity = 0.4] (-1,-2)--(-1,2);
+	\draw[color ={black},opacity = 0.4] (2,-2)--(2,2);
+	\draw[color ={black},opacity = 0.4] (-2,-2)--(-2,2);
+	\draw[color ={gray},opacity = 0.3] (-2,0)--(2,0);
+	\draw[color ={gray},opacity = 0.3] (-2,1)--(2,1);
+	\draw[color ={gray},opacity = 0.3] (-2,-1)--(2,-1);
+	\draw[color ={gray},opacity = 0.3] (0,-2)--(0,2);
+	\draw[color ={gray},opacity = 0.3] (1,-2)--(1,2);
+	\draw[color ={gray},opacity = 0.3] (-1,-2)--(-1,2);
+	\draw[color ={black},line width = 1.2] (0,-0.2)--(0,0.2);
+	\draw[color ={black},line width = 1.2] (-0.2,0)--(0.2,0);
+	\draw[opacity=0.8] (1,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$1$};
+	\draw[opacity=0.8] (-1,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$-1$};
+	\draw[opacity=0.8] (-0.5,1.1) node[anchor = center, rotate=0] {\scriptsize \color{black}$1$};
+	\draw[opacity=0.8] (-0.5,-0.9) node[anchor = center, rotate=0] {\scriptsize \color{black}$-1$};
+	\draw [color={black}] (-0.3,-0.3) node[anchor = center,scale=0.5, rotate = 0] {O};
+	\draw[color ={blue},line width = 2,-{Stealth[width=4mm]}] (-1,-1)--(1,-1);
+	\draw [color={blue}] (0,-0.5) node[anchor = center,scale=1.5, rotate = 0] {u};
+	\draw[color ={blue},-{Stealth[width=3mm]}] (-0.25,-0.13)--(0.38,-0.13);
+
+\end{tikzpicture}
+
+\item Lire les coordonnées du vecteur $\overrightarrow{u}$.
+
+\medskip
+\begin{tikzpicture}[baseline,scale = 0.75]
+
+    \tikzset{
+      point/.style={
+        thick,
+        draw,
+        cross out,
+        inner sep=0pt,
+        minimum width=5pt,
+        minimum height=5pt,
+      },
+    }
+    \clip (-2,-3) rectangle (5,2);
+    	\draw[color ={black},line width = 1.2,-{Stealth[width=4mm]}] (-2,0)--(5,0);
+	\draw[color ={black},line width = 1.2,-{Stealth[width=4mm]}] (0,-3)--(0,2);
+	\draw[color ={black},opacity = 0.4] (-2,1)--(5,1);
+	\draw[color ={black},opacity = 0.4] (-2,-1)--(5,-1);
+	\draw[color ={black},opacity = 0.4] (-2,2)--(5,2);
+	\draw[color ={black},opacity = 0.4] (-2,-2)--(5,-2);
+	\draw[color ={black},opacity = 0.4] (-2,-3)--(5,-3);
+	\draw[color ={black},opacity = 0.4] (1,-3)--(1,2);
+	\draw[color ={black},opacity = 0.4] (-1,-3)--(-1,2);
+	\draw[color ={black},opacity = 0.4] (2,-3)--(2,2);
+	\draw[color ={black},opacity = 0.4] (-2,-3)--(-2,2);
+	\draw[color ={black},opacity = 0.4] (3,-3)--(3,2);
+	\draw[color ={black},opacity = 0.4] (4,-3)--(4,2);
+	\draw[color ={black},opacity = 0.4] (5,-3)--(5,2);
+	\draw[color ={gray},opacity = 0.3] (-2,0)--(5,0);
+	\draw[color ={gray},opacity = 0.3] (-2,1)--(5,1);
+	\draw[color ={gray},opacity = 0.3] (-2,-1)--(5,-1);
+	\draw[color ={gray},opacity = 0.3] (-2,2)--(5,2);
+	\draw[color ={gray},opacity = 0.3] (-2,-2)--(5,-2);
+	\draw[color ={gray},opacity = 0.3] (0,-3)--(0,2);
+	\draw[color ={gray},opacity = 0.3] (1,-3)--(1,2);
+	\draw[color ={gray},opacity = 0.3] (-1,-3)--(-1,2);
+	\draw[color ={gray},opacity = 0.3] (2,-3)--(2,2);
+	\draw[color ={gray},opacity = 0.3] (-2,-3)--(-2,2);
+	\draw[color ={gray},opacity = 0.3] (3,-3)--(3,2);
+	\draw[color ={gray},opacity = 0.3] (4,-3)--(4,2);
+	\draw[color ={black},line width = 1.2] (0,-0.2)--(0,0.2);
+	\draw[color ={black},line width = 1.2] (1,-0.2)--(1,0.2);
+	\draw[color ={black},line width = 1.2] (-1,-0.2)--(-1,0.2);
+	\draw[color ={black},line width = 1.2] (2,-0.2)--(2,0.2);
+	\draw[color ={black},line width = 1.2] (3,-0.2)--(3,0.2);
+	\draw[color ={black},line width = 1.2] (-0.2,0)--(0.2,0);
+	\draw[color ={black},line width = 1.2] (-0.2,1)--(0.2,1);
+	\draw[color ={black},line width = 1.2] (-0.2,-1)--(0.2,-1);
+	\draw[opacity=0.8] (1,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$1$};
+	\draw[opacity=0.8] (2,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$2$};
+	\draw[opacity=0.8] (3,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$3$};
+	\draw[opacity=0.8] (4,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$4$};
+	\draw[opacity=0.8] (-1,-0.4) node[anchor = center, rotate=0] {\scriptsize \color{black}$-1$};
+	\draw[opacity=0.8] (-0.5,1.1) node[anchor = center, rotate=0] {\scriptsize \color{black}$1$};
+	\draw[opacity=0.8] (-0.5,-0.9) node[anchor = center, rotate=0] {\scriptsize \color{black}$-1$};
+	\draw[opacity=0.8] (-0.5,-1.9) node[anchor = center, rotate=0] {\scriptsize \color{black}$-2$};
+	\draw [color={black}] (-0.3,-0.3) node[anchor = center,scale=1, rotate = 0] {O};
+	\draw[color ={blue},line width = 2,-{Stealth[width=4mm]}] (-1,-2)--(4,1);
+	\draw [color={blue}] (1.242752,-0.071254) node[anchor = center,scale=1.5, rotate = 0] {u};
+	\draw[color ={blue},-{Stealth[width=3mm]}] (0.99,0.3)--(1.62,0.3);
+
+\end{tikzpicture}
+\end{enumerate}
+
+\end{enumerate}
+\end{multicols}
+}{exe:4}{
+\begin{enumerate}[itemsep=1em]
+	\item En partant de l'origine  du vecteur pour aller à son extrémité, on fait un déplacement de $-5$ unité(s) horizontalement et
+	$1$ unité(s) verticalement.\\
+        Les coordonnées du vecteur sont donc : $\overrightarrow{u}\begin{pmatrix}{\color[HTML]{f15929}\boldsymbol{-5}}\\\
+        {\color[HTML]{f15929}\boldsymbol{1}}\end{pmatrix}$.
+		\item En partant de l'origine  du vecteur pour aller à son extrémité, on fait un déplacement de $5$ unité(s) horizontalement
+		et $3$ unité(s) verticalement.\\
+		Les coordonnées du vecteur sont donc : $\overrightarrow{u}\begin{pmatrix}{\color[HTML]{f15929}\boldsymbol{5}}\\\
+		{\color[HTML]{f15929}\boldsymbol{3}}\end{pmatrix}$.
+\end{enumerate}
+}
+
+%ty https://github.com/Mattuuuuh/Maths-2nde/blob/master/Exercices/07-Vecteurs/serie1/serie1.tex
+\exe{}{
+	Placer les points $A(-4 ;3), B(2 ; 2), C(0 ; -2)$ dans un repère et répondre au questions.
+	
+	\begin{enumerate}
+		\item Quelle translation $\vec{AB}$ effectuer pour envoyer le point $A$ sur le point $B$ ?
+		\item Quelle translation $\vec{BC}$ effectuer pour envoyer le point $B$ sur le point $C$ ?
+		\item Quelle translation $\vec{AC}$ effectuer pour envoyer le point $A$ sur le point $C$ ?
+		\item Comparer $\vec{AC}$ et $\vec{AB} + \vec{BC}$ et compléter la phrase suivante.
+			\begin{center}
+				%\og Envoyer $A$ sur $B$, puis $B$ sur $C$ correspond à envoyer $A$ sur $\dots$ \fg
+				\og L'addition de la translation qui envoie $A$ sur $B$ à celle qui envoie $B$ sur $C$ \\[10pt] est égale à la translation qui envoie $A$ sur $\dots$. \fg
+			\end{center}
+		%\item Comparer $\vec{AC}$ et $\vec{AB} + \vec{BC}$.
+		
+		%\item Pour $A, B, C$ trois points quelconques, démontrer l'égalité
+		%	\[ \vec{AC} = \vec{AB} + \vec{BC}. \]
+	\end{enumerate}
+}{exe:5}{
+	
+	\begin{enumerate}
+		\item On calcule
+			\[ \vec{AB} = B - A = \pvec{2 - (-4)}{2-3} = \pvec{6}{-1}. \]
+		\item On calcule
+			\[ \vec{BC} = C - B = \pvec{0 - 2}{-2 - 2} = \pvec{-2}{-4}. \]
+		\item On calcule
+			\[ \vec{AC} = C - A = \pvec{0 - (-4)}{-2 -3} = \pvec{4}{-5}. \]
+		\item
+			La somme $\vec{AB} + \vec{BC}$ est donnée par
+				\[ \vec{AB} + \vec{BC} = \pvec{6}{-1} + \pvec{-2}{-4} = \pvec{6 - 2}{-1-4} = \pvec{4}{-5} = \vec{AC}. \]
+			\begin{center}
+				\og L'addition de la translation qui envoie $A$ sur $B$ à celle qui envoie $B$ sur $C$ \\[10pt] est égale à la translation qui envoie $A$ sur {\color{red} $C$}. \fg
+			\end{center}
+		%\item
+		%	On a, plus généralement, $\vec{AB} + \vec{BC} = B - A + C - B = C - A = \vec{AC}$.
+	\end{enumerate}
+}
+
+
+% @see : https://coopmaths.fr/alea?uuid=fa7b9&id=2G23-2&n=4&d=10&s=2&alea=HVOP&cd=1&cols=1
+\exe{}{
+\begin{enumerate}[itemsep=1em]
+	\item Dans un repère orthonormé $\big(O\,;\,\vec \imath,\,\vec \jmath\big)$, déterminer les coordonnées du point $A$, dont l'image par la translation de vecteur $\vec{u}\begin{pmatrix}-2\\-8\end{pmatrix}$ est le point $A'\left(2\,;\,-5\right)$.\\
+	\item Dans un repère orthonormé $\big(O\,;\,\vec \imath,\,\vec \jmath\big)$, déterminer les coordonnées du point $A$, dont l'image par la translation de vecteur $\vec{u}\begin{pmatrix}-2\\-7\end{pmatrix}$ est le point $A'\left(2\,;\,-4\right)$.\\
+	\item Dans un repère orthonormé $\big(O\,;\,\vec \imath,\,\vec \jmath\big)$, déterminer les coordonnées du point $A$, dont l'image par la translation de vecteur $\vec{u}\begin{pmatrix}-6\\-2\end{pmatrix}$ est le point $A'\left(-8\,;\,5\right)$.\\
+	\item Dans un repère orthonormé $\big(O\,;\,\vec \imath,\,\vec \jmath\big)$, déterminer les coordonnées du point $A$, dont l'image par la translation de vecteur $\vec{u}\begin{pmatrix}3\\6\end{pmatrix}$ est le point $A'\left(-4\,;\,3\right)$.\\
+\end{enumerate}
+}{exe:6}{
+
+}
+
+\end{tikzpicture}
